@@ -1,0 +1,14 @@
+.alertpage {    
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-right: 35px;
+    
+    position: fixed;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999;
+    min-width: 300px;
+    text-align: left;
+}

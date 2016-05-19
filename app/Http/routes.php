@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("meus-servicos", ["as" => "admin.servicos.index", "uses" => "ServicoController@index"]);
+
+Route::get("add-servicos", ["as" => "admin.servicos.create", "uses" => "ServicoController@create"]);
+
+Route::post("gravar-servicos", ["as" => "admin.servicos.store", "uses" => "ServicoController@store"]);
+
+Route::get("edit-servicos/{id}", ["as" => "admin.servicos.edit", "uses" => "ServicoController@edit"]);
+
+Route::get("excluir-servicos/{id}", ["as" => "admin.servicos.destroy", "uses" => "ServicoController@destroy"]);
+
+Route::post("alterar-servicos/{id}", ["as" => "admin.servicos.update", "uses" => "ServicoController@update"]);
+
+
