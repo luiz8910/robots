@@ -86,8 +86,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'imagem' => [
+            'required' => 'O arquivo selecionado não é uma imagem',
         ],
     ],
 

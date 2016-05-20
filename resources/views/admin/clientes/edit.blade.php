@@ -87,7 +87,7 @@ var ROOTPATH='';
 <aside class="right-side">
     <section class="content-header">
         <h1>
-            <i class="fa fa-plus-square-o"></i> Adicionar Cliente
+            <i class="fa fa-plus-square-o"></i> Editar Cliente - {{ $clientes->nome }}
         </h1>
     </section>
     <section class="content">
@@ -104,7 +104,7 @@ var ROOTPATH='';
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <b><i class="fa fa-exclamation-triangle"></i></b> <span class="errorMsg"></span>
                     </div>
-                    {!! Form::open(["route" => "admin.clientes.store", "role" => "form", "enctype" => "multipart/form-data"]) !!}
+                    {!! Form::model($clientes, ["route" => ["admin.clientes.update", $clientes->id], "role" => "form", "enctype" => "multipart/form-data"]) !!}
                     {{--<form role="form" method="POST" id="submitPostForm" enctype="multipart/form-data">--}}
                         <input type="hidden" name="uid" value=""/>
                         <input type="hidden" name="id[]" value="0"/>
@@ -124,6 +124,8 @@ var ROOTPATH='';
                                     <i class="fa fa-times"></i> Url Invalido</p>
                             </div>
                             <input type="hidden" name="oldPermalink" value=""/>
+
+							<img width="200" src="{{ url("uploads/cli".$clientes->imagem) }}" style="display: block; margin: 0px auto;"/>
 
                             <div class="form-group imageSlide">
                             <label class="col-xs-12  primaryText"></label>
@@ -176,7 +178,7 @@ var ROOTPATH='';
                                 <input type="hidden" name="pid" value="151">
                                 <input type="hidden" name="csrf" value="0bd2da414ee374536b9b004cff044070976de641" />
                                 <div class="form-group">
-                                    {!! Form::submit("Adicionar", ["class" => "btn btn-success"]) !!}
+                                    {!! Form::submit("Alterar", ["class" => "btn btn-danger"]) !!}
                                 {{--<button class="btn btn-success" name="submit"><i class="fa fa-plus-square-o"></i> Adicionar</button>--}}
                                 </div>
                             {{--</form>--}}{!! Form::close() !!}

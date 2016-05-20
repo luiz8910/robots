@@ -2,15 +2,14 @@
 
 namespace Admin\Http\Controllers;
 
-use Admin\Models\Cliente;
-use Admin\Models\ClienteImagem;
+
 use Admin\Repositories\ClienteRepository;
 use Illuminate\Http\Request;
 
 use Admin\Http\Requests;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Admin\Http\Requests\ClienteRequest;
 
 class ClienteController extends Controller
 {
@@ -18,15 +17,10 @@ class ClienteController extends Controller
      * @var ClienteRepository
      */
     private $clienteRepository;
-    /**
-     * @var ClienteImagem
-     */
-    private $clienteImagem;
 
-    public function __construct(ClienteRepository $clienteRepository, ClienteImagem $clienteImagem)
+    public function __construct(ClienteRepository $clienteRepository)
     {
         $this->clienteRepository = $clienteRepository;
-        $this->clienteImagem = $clienteImagem;
     }
 
     /**
@@ -57,7 +51,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClienteRequest $request)
     {
         $file = $request->file('imagem');
 
@@ -93,7 +87,9 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $clientes = $this->clienteRepository->find($id);
+
+        return view("admin.clientes.edit", compact("clientes"));
     }
 
     /**
@@ -103,9 +99,30 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClienteRequest $request, $id)
     {
-        //
+        $imagem = $this->clienteRepository->visible(["imagem"])->find($id);
+
+        //dd(public_path()."/uploads/cli" . $imagem->imagem);
+
+        if(file_exists(public_path()."/uploads/cli" . $imagem->imagem))
+        {
+            unlink(public_path()."/uploads/cli" . $imagem->imagem);
+        }
+
+        $file = $request->file('imagem');
+
+        $data = [
+            "nome" => $request->input("nome"),
+            "site" => $request->input("site"),
+            "imagem" => $file
+        ];
+
+        $this->clienteRepository->update($data, $id);
+
+        Storage::disk("public_local")->put("cli".$file, File::get($file));
+
+        return redirect()->route("admin.clientes.index");
     }
 
     /**
@@ -116,6 +133,14 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $imagem = $this->clienteRepository->visible(["imagem"])->find($id);
+
+        if(file_exists(public_path()."/uploads/cli" . $imagem->imagem))
+        {
+            unlink(public_path()."/uploads/cli" . $imagem->imagem);
+            $this->clienteRepository->delete($id);
+        }
+
+        return redirect()->route("admin.clientes.index");
     }
 }

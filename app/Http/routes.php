@@ -37,6 +37,12 @@ Route::get("meus-clientes", ["as" => "admin.clientes.index", "uses" => "ClienteC
 
 Route::get("add-clientes", ["as" => "admin.clientes.create", "uses" => "ClienteController@create"]);
 
+Route::get("edit-clientes/{id}", ["as" => "admin.clientes.edit", "uses" => "ClienteController@edit"]);
+
 Route::post("gravar-clientes", ["as" => "admin.clientes.store", "uses" => "ClienteController@store"]);
 
-/* Fim Serviços */
+Route::post("alterar-clientes/{id}", ["as" => "admin.clientes.update", "uses" => "ClienteController@update"]);
+
+Route::get("excluir-clientes/{id}", ["as" => "admin.clientes.destroy", "uses" => "ClienteController@destroy"]);
+
+/* Fim Clientes */

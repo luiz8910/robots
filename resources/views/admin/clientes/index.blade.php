@@ -109,12 +109,12 @@
                                             <img width="200" src="{{ url("uploads/cli".$c->imagem) }}"/>
                                         </td>
                                         <td>
-                                            <a href="edit-cliente.html">
+                                            <a href="{{ route("admin.clientes.edit", ["id" => $c->id]) }}">
                                                 <button class="btn btn-sm btn-info">
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
                                             </a>
-                                            <a data-toggle="modal" id="2" href="#deleteModal" class="deleteEmoticon">
+                                            <a data-toggle="modal" id="2" href="{{ route("admin.clientes.destroy", ["id" => $c->id]) }}" class="deleteEmoticon">
                                                 <button class="btn btn-sm btn-danger">
                                                     <i class="fa fa-times"></i>
                                                 </button>
