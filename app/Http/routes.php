@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* Serviços */
+
 Route::get("meus-servicos", ["as" => "admin.servicos.index", "uses" => "ServicoController@index"]);
 
 Route::get("add-servicos", ["as" => "admin.servicos.create", "uses" => "ServicoController@create"]);
@@ -27,4 +29,14 @@ Route::get("excluir-servicos/{id}", ["as" => "admin.servicos.destroy", "uses" =>
 
 Route::post("alterar-servicos/{id}", ["as" => "admin.servicos.update", "uses" => "ServicoController@update"]);
 
+/* Fim Serviços */
 
+/* Clientes */
+
+Route::get("meus-clientes", ["as" => "admin.clientes.index", "uses" => "ClienteController@index"]);
+
+Route::get("add-clientes", ["as" => "admin.clientes.create", "uses" => "ClienteController@create"]);
+
+Route::post("gravar-clientes", ["as" => "admin.clientes.store", "uses" => "ClienteController@store"]);
+
+/* Fim Serviços */

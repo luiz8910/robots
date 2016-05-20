@@ -75,7 +75,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="links.php">
+                        <a href="{{ route("admin.clientes.index") }}">
                             <i class="fa fa-align-left"></i> Listas de Clientes
                         </a>
                     </li>
