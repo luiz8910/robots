@@ -37,7 +37,7 @@
                 </ul>
             </li>
 
-            <li class="treeview active">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-briefcase"></i>
                     <span>Servi&ccedil;os</span>
@@ -49,7 +49,7 @@
                             <i class="fa fa-commenting"></i>Descri&ccedil;&atilde;o
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="{{ route("admin.servicos.index") }}">
                             <i class="fa fa-briefcase"></i> Meus Servi&ccedil;os
                         </a>
@@ -110,14 +110,19 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#">
-                            <i class="fa fa-commenting"></i> Descri&ccedil;&atilde;o
+                        <a href="{{ route("admin.quem-somos.index") }}">
+                            <i class="fa fa-commenting"></i> Listar Imagens
+                        </a>
+                        <a href="{{ route("admin.quem-somos.create") }}">
+                            <i class="fa fa-commenting"></i> Adicionar Nova Imagem
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fa fa-th"></i> Slide
+                        <a href="{{ route("admin.institucional.edit") }}">
+                            <i class="fa fa-th"></i> Editar Textos Institucionais
                         </a>
+
+
                     </li>
                 </ul>
             </li>

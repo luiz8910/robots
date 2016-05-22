@@ -46,3 +46,24 @@ Route::post("alterar-clientes/{id}", ["as" => "admin.clientes.update", "uses" =>
 Route::get("excluir-clientes/{id}", ["as" => "admin.clientes.destroy", "uses" => "ClienteController@destroy"]);
 
 /* Fim Clientes */
+
+/* Quem Somos */
+
+Route::get("listar-quem-somos", ["as" => "admin.quem-somos.index", "uses" => "QuemSomosController@index"]);
+
+Route::get("add-quem-somos", ["as" => "admin.quem-somos.create", "uses" => "QuemSomosController@create"]);
+
+Route::get("edit-quem-somos/{id}", ["as" => "admin.quem-somos.edit", "uses" => "QuemSomosController@edit"]);
+
+Route::post("gravar-quem-somos", ["as" => "admin.quem-somos.store", "uses" => "QuemSomosController@store"]);
+
+Route::post("alterar-quem-somos/{id}", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
+
+Route::get("excluir-quem-somos/{id}", ["as" => "admin.quem-somos.destroy", "uses" => "QuemSomosController@destroy"]);
+
+// ----------------------------------------  Textos Missão, Valores e Visão  ----------------------------------- //
+
+Route::get("edit-institucional", ["as" => "admin.institucional.edit", "uses" => "institucionalController@edit"]);
+
+Route::post("alterar-institucional", ["as" => "admin.institucional.update", "uses" => "institucionalController@update"]);
+/* Fim Quem Somos */

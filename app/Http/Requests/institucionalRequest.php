@@ -4,7 +4,7 @@ namespace Admin\Http\Requests;
 
 use Admin\Http\Requests\Request;
 
-class ClienteRequest extends Request
+class institucionalRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class ClienteRequest extends Request
     public function rules()
     {
         return [
-            "nome" => "required",
-            "site" => "required",
-            "imagem" => "required|image"
+            "missao" => "required",
+            "visao" => "required",
+            "valores" => "required",
         ];
     }
 }

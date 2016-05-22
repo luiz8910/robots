@@ -34,6 +34,14 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind('Admin\Repositories\ClienteRepository',
             'Admin\Repositories\ClienteRepositoryEloquent'
         );
+
+        $this->app->bind('Admin\Repositories\QuemSomosRepository',
+            'Admin\Repositories\QuemSomosRepositoryEloquent'
+        );
+
+        $this->app->bind('Admin\Repositories\InstitucionalRepository',
+            'Admin\Repositories\InstitucionalRepositoryEloquent'
+        );
     }
 }
 
