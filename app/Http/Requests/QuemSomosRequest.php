@@ -23,6 +23,7 @@ class QuemSomosRequest extends Request
      */
     public function rules()
     {
+
         return [
             "imagem" => "required|image"
         ];

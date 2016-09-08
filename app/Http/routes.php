@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ["as" => "admin.dashboard.index", "uses" => "DashboardController@index"]);
 
 /* Serviços */
 
@@ -66,4 +64,5 @@ Route::get("excluir-quem-somos/{id}", ["as" => "admin.quem-somos.destroy", "uses
 Route::get("edit-institucional", ["as" => "admin.institucional.edit", "uses" => "institucionalController@edit"]);
 
 Route::post("alterar-institucional", ["as" => "admin.institucional.update", "uses" => "institucionalController@update"]);
+
 /* Fim Quem Somos */

@@ -3,7 +3,7 @@
     <section class="sidebar sidebarMenuScroll">
         <ul class="sidebar-menu">
             <li>
-                <a href="Dashboard.html">
+                <a href="{{ route("admin.dashboard.index") }}">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>

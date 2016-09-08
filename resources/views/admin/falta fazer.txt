@@ -1,0 +1,78 @@
+perfil-user.html
+novo-post.html
+meus-post.html
+todas-posts.html
+slide-quem-somos.html
+descri-localizaçao.html
+Mapa.html
+endereço.html
+configuracao.html
+
+
+<div class="tab-content">
+                                                    <div role="tabpanel" class="tab-pane fade in active" id="info">
+                                                        <h4 class="text-center">Informaçoes Pessoais</h4>
+                                                        <div class="form-group">
+                                                            <label for="">User Name </label>
+                                                            <input type="text" class="form-control" id="" placeholder="User Name" value="SteveZ" >
+                                                        </div> <!-- fim div .form-group -->
+
+                                                        <div class="form-group">
+                                                            <label for="">Nome </label>
+                                                            <input type="text" class="form-control" id="" placeholder="Nome" value="Steve Zoe" >
+                                                        </div> <!-- fim div .form-group -->
+
+                                                        <div class="form-group">
+                                                            <label for="">Data do Nascimento </label>
+                                                            <input type="date" class="form-control" id="" placeholder="" value="" >
+                                                        </div> <!-- fim div .form-group -->
+
+                                                        <div class="form-group">
+                                                            <label for="">Profissão </label>
+                                                            <input type="text" class="form-control" id="" placeholder="Profissão" value="Designer" >
+                                                        </div> <!-- fim div .form-group -->
+
+                                                        <div class="form-group">
+                                                            <label for="">Email </label>
+                                                            <input type="email" class="form-control" id="" placeholder="Email" value="A@a.com" >
+                                                        </div> <!-- fim div .form-group -->
+
+                                                    </div> <!-- fim div .tabpanel #info -->
+                                                        
+                                                    <!-- Fim tab #info -->
+                                                    
+                                                    <div role="tabpanel" class="tab-pane fade in active" id="avatar">
+                                                        <h4 class="text-center">Avatar</h4>
+                                                        asdas
+
+                                                    </div> <!-- fim div .tabpanel #info -->
+                                                    
+                                                    <!-- Fim tab #avatar -->
+                                                    
+                                                    <div role="tabpanel" class="tab-pane fade in active" id="Senha">
+                                                       <h4 class="text-center">Senha</h4>
+                                                        <div class="form-group">
+                                                            <label for="">Senha atual</label>
+                                                            <input type="Password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+                                                        </div> <!-- fim div .form-group -->
+                                                        <div class="form-group">
+                                                            <label for="">Nova Senha</label>
+                                                            <input type="Password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+                                                        </div> <!-- fim div .form-group -->
+                                                        <div class="form-group">
+                                                            <label for="">Redigite a nova Senha</label>
+                                                            <input type="Password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+                                                        </div> <!-- fim div .form-group -->
+                                                        <br>
+                                                        <button type="submit" class="btn btn-success" id="subir">
+                                                            <i class="fa fa-check-square-o"></i>
+                                                            Salvar
+                                                        </button>
+                                                    </div> <!-- fim div .tabpanel #Senha -->
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                </div>  <!-- fim div .tabcontent -->
