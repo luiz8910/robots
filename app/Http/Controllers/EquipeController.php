@@ -2,24 +2,13 @@
 
 namespace Admin\Http\Controllers;
 
-use Admin\Repositories\ServicoRepository;
 use Illuminate\Http\Request;
 
 use Admin\Http\Requests;
-use Admin\Http\Requests\ServicoRequest;
+use Admin\Http\Controllers\Controller;
 
-class ServicoController extends Controller
+class EquipeController extends Controller
 {
-    /**
-     * @var ServicoRepository
-     */
-    private $servicoRepository;
-
-    public function __construct(ServicoRepository $servicoRepository)
-    {
-        $this->servicoRepository = $servicoRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -27,11 +16,7 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        //$servico = $this->servicoRepository->all();
-
-        //return view("admin.servicos.index", compact("servico"));
-
-        return view('admin.servicos.index');
+        return view('admin.equipe.index');
     }
 
     /**
@@ -41,7 +26,7 @@ class ServicoController extends Controller
      */
     public function create()
     {
-        return view("admin.servicos.create");
+        return view('admin.equipe.create');
     }
 
     /**
@@ -50,13 +35,9 @@ class ServicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ServicoRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-
-        $this->servicoRepository->create($data);
-
-        return redirect()->route("admin.servicos.index");
+        //
     }
 
     /**
@@ -78,9 +59,7 @@ class ServicoController extends Controller
      */
     public function edit($id)
     {
-        $servico = $this->servicoRepository->find($id);
-
-        return view("admin.servicos.edit", compact("servico"));
+        //
     }
 
     /**
@@ -90,13 +69,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ServicoRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $this->servicoRepository->update($data, $id);
-
-        return redirect()->route("admin.servicos.index");
+        //
     }
 
     /**
@@ -107,8 +82,6 @@ class ServicoController extends Controller
      */
     public function destroy($id)
     {
-        $this->servicoRepository->find($id)->delete();
-
-        return redirect()->route("admin.servicos.index");
+        //
     }
 }

@@ -1,849 +1,496 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-<link rel="shortcut icon" href="">
-<link href="/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-<link href="/css/bootoption.css" rel="stylesheet" type="text/css"/>
-<link href="/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="/css/theme-orangeblue.css" rel="stylesheet">
-<link href="/css/style.css" rel="stylesheet" type="text/css"/>
-    <script src="/js/jquery.js"></script>
-<link href="/css/preloader.css" rel="stylesheet">
-<div id="loading">
-<div id="loading-center">
-<div id="loading-center-absolute">
-<div class="cssload-container">
-<div class="cssload-speeding-wheel"></div>
-</div>
-</div>
-</div>
-</div>
-<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$('#loading').fadeOut('slow',function(){$(this).remove();});
-		});
-	</script>
-<div id="submitLoader"></div>
-</head><body class="skin-blue">
-<header class="header">
-        <a target="_blank" href="" class="logo secondary-bg-color">
-            <img src="/images/logo-h2o-painel.png">
-        </a>
-        <nav class="navbar navbar-static-top primary-bg-color" role="navigation">
-            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Menu</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#" target="_blank"><i class="fa fa-globe"></i> Visualizar Site</a>
-                    </li>
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="glyphicon glyphicon-user"></i>
-                            <span>administrador <i class="caret"></i></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="user-footer">
-                                <a href="#">
-                                <i class="fa fa-user"></i> Meu Perfil</a>
-                                <a href="l#">
-                                <i class="fa fa-sign-out"></i> Sair</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    
-    <script>
-var maxSize=104857600;
-var slideImageWidth=650;
-var slideImageHeight=370;
-var resultImageWidth=600;
-var resultImageHeight=300;
-var questionImageWidth=600;
-var questionImageHeight=370;
-var answerImageWidth=215;
-var answerImageHeight=215;
-var page='';
-var ROOTPATH='';
-</script>
-    
-<link href="/css/fileUpload.css" rel="stylesheet" type="text/css"/>
-<script src="/js/fileUpload.js"></script>
-<script src="/js/verbalExpressions.js"></script>
-<script src="/js/validations.js"></script>
-<title>Dashboard | Add Slide Quem Somos</title>
-<div class="wrapper row-offcanvas row-offcanvas-left">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Robots | Quem Somos </title>
 
-@include("admin.menu.menu-lateral")
-    
-<aside class="right-side">
-    <section class="content-header">
-        <h1>
-            <i class="fa fa-plus-square-o"></i> Adicionar Slide Quem Somos
-        </h1>
-    </section>
-    <section class="content">
-        <div class="box-header">
-            <h3 class="box-title">
-                @include("errors._check")
-            </h3>
-        </div>
-        <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
-            <div class="box box-warning">
-                <div class="box-body">
-                    <div id="dangerAlert" class="alert alert-danger alert-dismissable hide">
-                        <i class="fa fa-ban"></i>
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <b><i class="fa fa-exclamation-triangle"></i></b> <span class="errorMsg"></span>
-                    </div>
-                    {!! Form::model($quemSomos, ["route" => ["admin.quem-somos.update", $quemSomos->id], "enctype" => "multipart/form-data"]) !!}
-                    {{--<form role="form" method="POST" id="submitPostForm" enctype="multipart/form-data">--}}
-                    <input type="hidden" name="uid" value=""/>
-                        <input type="hidden" name="id[]" value="0"/>
-                        <div class="slideHeader">
-                            {{--<div class="form-group">--}}
-                                {{--<label class="control-label" for="name">Nome do Slide</label>--}}
-                                {{----}}
-                                {{--<input type="text" class="form-control slideTitle" name="sTitle[]" placeholder="Entre com nome do Banner" value="">--}}
-                                {{--<p class="error-msg label label-danger slideTitleError hide"><i class="fa fa-times"></i> Título comprimento mínimo deve ser de 10 caracteres</p>--}}
-                            {{--</div>--}}
-                            {{--<input type="hidden" name="oldPermalink" value=""/>--}}
-                            {{--<div class="form-group">--}}
-                                {{--<label class="control-label">Tipo de Slide</label>--}}
-                                {{--<div class="">--}}
-                                    {{--<select class="selectpicker slideType" name="sType[]">--}}
-                                        {{--<option value="1" selected>Imagem</option>--}}
-                                        {{--<option value="2">Video</option>--}}
-                                    {{--</select>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-							<img width="200" src="{{ url("uploads/quem-somos".$quemSomos->imagem) }}" style="display: block; margin: 0px auto;"/>
-                            <div class="form-group imageSlide">
-                                <label class="col-xs-12  primaryText"></label>
-                                <div class="">
-                                    <div class="form-group last row">
-                                        <div class="col-xs-12">
-                                            <div class="fileupload fileupload-new qpLarge" data-provides="fileupload">
-                                                <div class="fileupload-new quizImg"></div>
-                                                <div class="fileupload-preview fileupload-exists slideImg quizImg"></div>
-                                                <div class="slideImgParent">
-                                                <span class="btn btn-white btn-file">
-                                                    <span class="fileupload-new">
-                                                        <i class="fa fa-camera"></i>
-                                                    </span>
-                                                    <p>Clique aqui, para adicionar Imagem</p>
-                                                    <span class="fileupload-exists">
-                                                        <i class="fa fa-undo"></i> Trocar
-                                                    </span>
-                                                    {!! Form::file("imagem", null, ["class" => "default", "accept" => "image/jpg,image/png,image/jpeg,image/gif"]) !!}
+	<!-- Bootstrap -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
 
-                                                </span>
-                                                <p class="error-msg label label-danger imgCardAlert sFileError hide"><i class="fa fa-times-circle"></i> Dimens&atilde;o Inv&aacute;lido ou vazio </p><p class="imgDimensions">1919x700</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="form-group videoSlide hide">
-                            <label class="control-label">Url</label>
-                            <div class="">
-                                <input type="url" class="form-control slideVideourl" name="sVideoUrl[]" value="">
-                                <div class="text-muted">
-                                    <a href="https://www.youtube.com" target="_blank" rel="nofollow">Youtube</a>, 
-                                    <a href="https://vimeo.com"target="_blank" rel="nofollow">Vimeo</a>, 
-                                    <a href="http://www.dailymotion.com"target="_blank" rel="nofollow">Dailymotion</a>, 
-                                    <a href="https://vine.co"target="_blank" rel="nofollow">Vine</a>, 
-                                    <a href="https://web.facebook.com"target="_blank" rel="nofollow">Facebook</a> Ou 
-                                    <a href="https://www.instagram.com"target="_blank" rel="nofollow">Instagram</a>
-                                </div>
-                                <p class="error-msg  label label-danger slideVideourlError hide"><i class="fa fa-times-circle"></i> url vazio ou inválido</p>
-                            </div>
-                        </div>
-                                        <div class="clearfix"></div>
+	<!-- folha de estilo customizado -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/color.css" rel="stylesheet">
 
-                                </div>
-                                <input type="hidden" name="pid" value="151">
-                                <input type="hidden" name="csrf" value="0bd2da414ee374536b9b004cff044070976de641" />
-                                <div class="form-group">
-                                    {!! Form::submit("Alterar", ["class" => "btn btn-danger"]) !!}
-                                </div>
-                            {{--</form>--}}{!! Form::close() !!}
-                        </div>
-                    </div>
-                </div>
-            </section>
-	</aside>
-</div>
-<script>
-var qIndex=0;
-var question=0;
-var answer=0;
-//change global variable value;
-function changeGlobalOptionCount()
-{
-option=2;
-count=1;
-k=0;
-return option,count,k;
-}
-//change global question index
-function incrementQuestionIndexes()
-{
-qIndex=qIndex+1;
-question=0;
-answer=0;
-return qIndex,question,answer;
-}
-function resetQuestionIndexes()
-{
-qIndex=0;
-}
-var allOptions='';
-//*********************************************************Add,Remove Poll************************************************\\
-//add poll option
-$(document).on('click','.addOptions',function(){
-var slideIndex=$(this).attr('id');
-var optionIndex=$(this).attr('data-id');
-optionIndex=parseInt(optionIndex)+1
-$(this).attr('data-id',optionIndex);
-var option=$(this).parent().parent().prev('.embedPollSlide').find('.pollOptions').length + 1;
-if(option > 1)
-{
-	$(this).parent().parent().prev('.embedPollSlide').find('.pollsLimitError').addClass('hide')
-}
-$(this).parent().parent().prev().append('<div class="form-group row"><label class="col-xs-12  primaryText pollOptions">Option '+option+'</label><div class="col-sm-7"><input type="text" class="form-control pollOptionsFeild" name="sPollOptions[0]['+optionIndex+']"><p class="error-msg  label label-danger slidePolloptionError hide"><i class="fa fa-times-circle"></i> Option minimum length should be 3 chars</p></div><a class="col-xs-2 selectOption" style="position: relative; top: 11px;"><i class="fa fa-trash fa-lg" style="color:red"></i></a></div>');
-option=option+1;
-});
-//remove poll option 
-$(document).on('click','.selectOption',function(){
-//after remove an option Reorder options
-var count=1;
-$(this).parents('.embedPollSlide').find(".pollOptions").not($(this).parent().find('.pollOptions')).each(function(){
-	$(this).text("Option "+count);
-	count++;
-});
-$(this).parent().remove();
-});
-//*****************************************************Add,Remove Results*************************************************\\
-$(document).on('click','.addResults',function(){
-var countResults=$(this).parents('.embedQuizSlide').find('.myResNo').length;
-countResults=countResults+1;
-$(this).parents('.slideHeader').find('.embedQuizSlide select').each(function (index, element)
-{
-	$(this).append('<option value="'+countResults+'">Result '+countResults+'</option>')
-});
-$(this).prev().append('<div><div class="removeResult text-right form-group"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></div><div class="form-group myResNo"><div class="form-group"><div class="input-group"><div class="input-group-addon resultno">'+countResults+'</div><input type="text" class="form-control slideQuizresultTitle" name="sQuizResultTitle[0][]" placeholder="Result Title"></div><p class="error-msg label label-danger slideQuizresultTitleError hide"><i class="fa fa-times-circle"></i> Title minimum length should be 10 chars</p></div></div><div class="quizz row"><div class="col-sm-8"><div class="form-group"><textarea class="form-control slideQuizresultDescription" name="sQuizResultDescription[0][]" placeholder="Result Description"></textarea><p class="error-msg label label-danger slideQuizresultDescriptionError hide"><i class="fa fa-times-circle"></i> Description minimum length should be 30 chars</p></div></div><div class="col-sm-4"><div class="form-group last tile"><div class="fileupload fileupload-new" data-provides="fileupload"><div class="fileupload-new quizImg"></div><div class="fileupload-preview fileupload-exists quizResultImg quizImg" ></div><div class="resultImgParent"><span class="btn btn-white btn-file"><span class="fileupload-new"><i class="fa fa-camera"></i></span><p>Click to add image</p><span class="fileupload-exists"><i class="fa fa-undo"></i> Change image</span><input type="file" class="default" accept="image/jpg,image/png,image/jpeg,image/gif"/><input type="hidden" class="sQuizResultFile" name="sQuizResultFile[0][]"></span><p class="error-msg label label-danger imgCardAlert sQuizResultFileError hide"><i class="fa fa-times-circle"></i> Empty or invalid dimensions</p><p class="imgDimensions">600x300</p></div></div></div></div></div></div>');
-var countResults=$(this).parents('.embedQuizSlide').find('.myResNo').length;
-if(countResults > 1)
-{
-	$(this).parents(".embedQuizSlide").find('.resultsLimitError').addClass('hide');
-}
-});
-$(document).on('click','.removeResult',function(){
-var res=1;
-$(this).parents('.slideHeader').find('.myResNo').not($(this).next('.myResNo')).each(function (index, element){
-	$(this).find('.resultno').text(res)
-	res=res+1;
-})
-//remove result from option dropdown
-$(this).parents('.slideHeader').find('.embedQuizSlide select').each(function (index, element)
-{
-	$(this).html('');
-	for(opt=1; opt < res; opt++)
-	{
-		$(this).append('<option value="'+opt+'">Result '+opt+'</option>');
-	}
-});
-$(this).parent().remove();
+	<!-- folha de estilo FontAwesome -->
+	<link rel="stylesheet" href="assets/font/font-awesome-4.6.3/css/font-awesome.min.css">
 
-});
-//*****************************************************Add,Remove Answers*************************************************\\
-$(document).on('click','.addAnswers',function(){
-var answerIndex=$(this).attr('data-id');
-answerIndex=parseInt(answerIndex)+1;
-$(this).attr('data-id',answerIndex)
-allOptions='';
-var questionIndex=$(this).attr('id');
-var countResults=$(this).parents('.slideHeader').find(".embedQuizSlide").find('.myResNo').length;
-for(i=1; i<=countResults; i++)
-{
-	allOptions +='<option value="'+i+'">Result '+i+'</option>';
-}
-//closest(".divouter").after("<div>Foo</div>");
-$(this).parent().before('<div class="col-sm-6 optParent"><h4></h4><div class="panel addans"><div class="panel-body"><div class="form-group last row"><div class="col-xs-12"><div class="fileupload fileupload-new" data-provides="fileupload"><div class="fileupload-new quizImg"></div><div class="fileupload-preview fileupload-exists quizAnswerImg quizImg" ></div><div class="answerImgParent"><span class="btn btn-white btn-file"><span class="fileupload-new"><i class="fa fa-camera"></i></span><p>Click to add image</p><span class="fileupload-exists"><i class="fa fa-undo"></i> Change image</span><input type="file" class="default" accept="image/jpg,image/png,image/jpeg,image/gif"/><input type="hidden" class="sQuizAnswerFile" name="sQuizAnswerFile[0]['+questionIndex+']['+answerIndex+']"></span><p class="error-msg label label-danger imgCardAlert sQuizAnswerFileError hide"><i class="fa fa-times-circle"></i> Empty or invalid dimensions</p><p class="imgDimensions">215x215</p></div></div></div></div><textarea class="form-control" placeholder="Your answer" name="sQuizAnswersDescription[0]['+questionIndex+']['+answerIndex+']"></textarea></div><div class="clearfix"></div><div class="panel-footer text-center"><div class="btn-group"><select class="selectpicker btn btn-default" name="sQuizAnswerResult[0]['+questionIndex+']['+answerIndex+']">'+allOptions+'</select><div class="removeOption pull-left">&nbsp;<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></div></div></div></div></div>');
-var countAnswers=$(this).parents(".embedQuizSlide").find('.optParent').length;
-if(countAnswers > 1)
-{
-	$(this).parents(".embedQuizSlide").find('.answersLimitError').addClass('hide');
-}
-});
-$(document).on('click','.removeOption',function(){
-$(this).parents('.optParent').remove();
-});
-//******************************************************Add,Remove Question***********************************************\\
-$(document).on('click','.addQuestions',function(){
-incrementQuestionIndexes();
-var questionIndex=$(this).attr('id');
-questionIndex=parseInt(questionIndex)+1;
-$(this).attr('id',questionIndex);
-var countQuestions=$(this).parents('.slideHeader').find('.quizMain').length;
-countQuestions=countQuestions+1;
-allOptions='';
-countResults=$(this).parents('.slideHeader').find('.myResNo').length;
-for(i=1; i<=countResults; i++)
-{
-	allOptions +='<option value="'+i+'">Result '+i+'</option>';
-}
-$(this).parent().before('<div class="quizMain"><div class="removeQuestion text-right"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></div><div class="clearfix"></div><h4>Question?</h4><div class="alert alert-danger answersLimitError hide"><i class="fa fa-times-circle"></i> Minimum 2 anwers required</div><div class="form-group"><div class=""><div class="input-group"><div class="input-group-addon questionno">Q '+countQuestions+'</div><input type="text" class="form-control" name="sQuizQuestion[0]['+questionIndex+']['+question+']" placeholder="Question Title(Optional)"></div></div></div><div class="quizz"><div class="form-group last row"><div class="col-xs-12"><div class="fileupload fileupload-new qpLarge" data-provides="fileupload"><div class="fileupload-new quizImg"></div><div class="fileupload-preview fileupload-exists quizQuestionImg quizImg" ></div><div class="questionImgParent"><span class="btn btn-white btn-file"><span class="fileupload-new"><i class="fa fa-camera"></i></span><p>Click to add image</p><span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span><input type="file" class="default" accept="image/jpg,image/png,image/jpeg,image/gif"/><input type="hidden" class="sQuizQuestionFile" name="sQuizQuestionFile[0]['+questionIndex+']['+question+']"></span><p class="error-msg label label-danger imgCardAlert sQuizQuestionFileError hide"><i class="fa fa-times-circle"></i> Empty or invalid dimensions</p><p class="imgDimensions">600x370</p></div></div></div></div></div><div class="clearfix"></div><div class="row"><div class="col-sm-6 optParent"><h4></h4><div class="panel addans"><div class="panel-body"><div class="form-group last row"><div class="col-xs-12"><div class="fileupload fileupload-new" data-provides="fileupload"><div class="fileupload-new quizImg"></div><div class="fileupload-preview fileupload-exists quizAnswerImg quizImg" ></div><div class="answerImgParent"><span class="btn btn-white btn-file"><span class="fileupload-new"><i class="fa fa-camera"></i></span><p>Click to add image</p><span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span><input type="file" class="default" accept="image/jpg,image/png,image/jpeg,image/gif"/><input type="hidden" class="sQuizAnswerFile" name="sQuizAnswerFile[0]['+questionIndex+']['+answer+']"></span><p class="error-msg label label-danger imgCardAlert sQuizAnswerFileError hide"><i class="fa fa-times-circle"></i> Empty or invalid dimensions</p><p class="imgDimensions">215x215</p></div></div></div></div><textarea class="form-control" placeholder="Your answer" name="sQuizAnswersDescription[0]['+questionIndex+']['+answer+']"></textarea></div><div class="clearfix"></div><div class="panel-footer text-center"><div class="btn-group"><select class="selectpicker btn btn-default" name="sQuizAnswerResult[0]['+questionIndex+']['+answer+']">'+allOptions+'</select><div class="removeOption pull-left">&nbsp;<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></div></div></div></div></div><div class="col-xs-12"><button class="btn btn-success btn-block btn-lg addAnswers" id="'+questionIndex+'" data-id="0" type="button"><i class="fa fa-plus"></i> Add Answer</button></div></div></div>');
-});
-$(document).on('click','.removeQuestion',function(){
-var ques=1;
-$(this).parents('.slideHeader').find('.quizMain').not($(this).parent('.quizMain')).each(function (index, element){
-	$(this).find('.questionno').text('Q '+ques)
-	ques=ques+1;
-})
-$(this).parent().remove();
-});
-$(document).on('change','.slideType',function(){
-var value=$(this).val();
-if(value==1)
-{
-	$(this).parent().parent().next(".imageSlide").removeClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==2)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").removeClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==3)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").removeClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==4)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").removeClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==5)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").removeClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==6)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").removeClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==7)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").removeClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").removeClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-else if(value==8)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").removeClass('hide');
-}
-else if(value==0)
-{
-	$(this).parent().parent().next(".imageSlide").addClass('hide');
-	$(this).parent().parent().next().next(".videoSlide").addClass('hide');
-	$(this).parent().parent().next().next().next(".soundSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next(".embedSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next(".embedMapSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next(".embedIframeSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next(".embedPollSlide").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next(".optionsBtn").addClass('hide');
-	$(this).parent().parent().next().next().next().next().next().next().next().next().next(".embedQuizSlide").addClass('hide');
-}
-});
-</script>
-    
-<script>
-function getDomainName(url) {
-var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
-if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
-return match[2];
-}
-else {
-	return null;
-}
-}
-function submitFormValidation()
-{
-var isFormValid = true;
-//Slide title validation
-if ($.trim($('.slideTitle').val()).length < 10)
-{
-	isFormValid = false;
-	$('.slideTitle').next('.slideTitleError').removeClass('hide').addClass('scrollToTarget');
-}
-else
-{
-	$('.slideTitle').next('.slideTitleError').addClass('hide').removeClass('scrollToTarget');
-}
-var slideType=$('.slideType').val();
-//Slide image validation
-if(slideType==1)
-{
-	if($('.sFile').val()=="")
-	{
-		isFormValid = false;
-		$('.sFile').parent().next('.sFileError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.sFile').parent().next('.sFileError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide videoUrl validation
-if(slideType==2)
-{
-	var videoUrl=$.trim($('.slideVideourl').val());
-	if(!validFacebookVideoUrl(videoUrl) && !validVimeoVideoUrl(videoUrl) && !validDailymotionVideoUrl(videoUrl) && !validVineVideoUrl(videoUrl) && !validInstagramVideoUrl(videoUrl) && !validYoutubeVideoUrl(videoUrl))
-	{
-		isFormValid = false;
-		$('.slideVideourl').next().next('.slideVideourlError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.slideVideourl').next().next('.slideVideourlError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide audioUrl validation
-if($('.slideType').val()==3)
-{
-	var audioUrl=$.trim($('.slideAudiourl').val());
-	if(!validSoundcloudUrl(audioUrl) && !validMixcloudUrl(audioUrl) && !validReverbnationUrl(audioUrl))
-	{
-		isFormValid = false;
-		$('.slideAudiourl').next().next('.slideAudiourlError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.slideAudiourl').next().next('.slideAudiourlError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide embedUrl validation
-if(slideType==4)
-{
-	var embedUrl=$.trim($(this).find('.slideEmbedurl').val());
-	if(!validGooglePostUrl(embedUrl) && !validTwitterPostUrl(embedUrl) && !validPinterestPostUrl(embedUrl) && !validInstagramPostUrl(embedUrl) && !validFacebookPostUrl(embedUrl) && !validImgurPostUrl(embedUrl) && !validFlickerPostUrl(embedUrl) && !validTwitchPostUrl(embedUrl) && !validDeviantartPostUrl(embedUrl))
-	{
-		isFormValid = false;
-		$('.slideEmbedurl').next().next('.slideEmbedurlError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.slideEmbedurl').next().next('.slideEmbedurlError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide embedMapUrl validation
-if(slideType==5)
-{
-	var mapUrl=$.trim($('.slideMapurl').val());
-	if(!validGoogleMapUrl(mapUrl) && !validBingMapUrl(mapUrl))
-	{
-		isFormValid = false;
-		$('.slideMapurl').next().next('.slideMapurlError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.slideMapurl').next().next('.slideMapurlError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide Iframe validation
-if(slideType==6)
-{
-	var iframeValue=$.trim($('.slideIframe').val()).toLowerCase();
-	if(iframeValue.indexOf("<iframe")==-1 || iframeValue.indexOf("src=")==-1 || iframeValue.indexOf("</iframe>")==-1)
-	{
-		isFormValid = false;
-		$('.slideIframe').next('.slideIframurlError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.slideIframurlError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide polls option count validation
-if(slideType==7)
-{
-	if($('.embedPollSlide').find('.pollOptions').length < 2)
-	{
-		isFormValid = false;
-		$('.embedPollSlide').find('.pollsLimitError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.embedPollSlide').find('.pollsLimitError').addClass('hide').removeClass('scrollToTarget');
-	}
-	$('.embedPollSlide').find('.pollOptionsFeild').each(function()
-	{
-		if($.trim($(this).val()).length < 3)
-		{
-			isFormValid = false;
-			$(this).next('.slidePolloptionError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).next('.slidePolloptionError').addClass('hide').removeClass('scrollToTarget');
-		}
-	})
-	//Slide pollimage validation
-	if($.trim($('.embedPollSlide').find('.sPollFile').val())=="")
-	{
-		isFormValid = false;
-		$('.embedPollSlide').find('.sPollFile').parent().next('.sPollFileError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.embedPollSlide').find('.sPollFile').parent().next('.sPollFileError').addClass('hide').removeClass('scrollToTarget');
-	}
-}
-//Slide Quiz result title validation
-if(slideType==8)
-{
-	if($('.slideHeader').find('.myResNo').length < 2)
-	{
-		isFormValid = false;
-		$('.resultsLimitError').removeClass('hide');
-	}
-	else
-	{
-		$('.resultsLimitError').addClass('hide');
-	}
-	$('.embedQuizSlide').find(".slideQuizresultTitle").each(function()
-	{
-		if($.trim($(this).val()).length < 10)
-		{
-			isFormValid = false;
-			$(this).parent().next('.slideQuizresultTitleError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).parent().next('.slideQuizresultTitleError').addClass('hide').removeClass('scrollToTarget');
-		}
-	});
-	//Slide Quiz result description validation
-	$('.embedQuizSlide').find(".slideQuizresultDescription").each(function()
-	{
-		if($.trim($(this).val()).length < 30)
-		{
-			isFormValid = false;
-			$(this).next('.slideQuizresultDescriptionError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).next('.slideQuizresultDescriptionError').addClass('hide').removeClass('scrollToTarget');
-		}
-	});
-	//Slide Quiz result image validation
-	$('.embedQuizSlide').find(".sQuizResultFile").each(function()
-	{
-		if($.trim($(this).val())=="")
-		{
-			isFormValid = false;
-			$(this).parent().next('.sQuizResultFileError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).parent().next('.sQuizResultFileError').addClass('hide').removeClass('scrollToTarget');
-		}
-	});
-	//Slide Quiz result count validation
-	if($('.embedQuizSlide').find('.myResNo').length < 2)
-	{
-		isFormValid = false;
-		$(this).find('.resultsLimitError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$(this).find('.resultsLimitError').addClass('hide').removeClass('scrollToTarget');
-	}
-	//Slide Quiz question answers count validation
-	$('.embedQuizSlide').find(".quizMain").each(function()
-	{
-		if($(this).find('.optParent').length < 2)
-		{
-			isFormValid = false;
-			$(this).find('.answersLimitError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).find('.answersLimitError').addClass('hide').removeClass('scrollToTarget');
-		}
-	});
-	//Slide Quiz question image validation
-	$('.embedQuizSlide').find(".sQuizQuestionFile").each(function()
-	{
-		if($.trim($(this).val())=="")
-		{
-			isFormValid = false;
-			$(this).parent().next('.sQuizQuestionFileError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).parent().next('.sQuizQuestionFileError').addClass('hide').removeClass('scrollToTarget');
-		}
-	});
-	//Slide Quiz answers image validation
-	$('.embedQuizSlide').find(".sQuizAnswerFile").each(function()
-	{
-		if($.trim($(this).val())=="")
-		{
-			isFormValid = false;
-			$(this).parent().next('.sQuizAnswerFileError').removeClass('hide').addClass('scrollToTarget');
-		}
-		else
-		{
-			$(this).parent().next('.sQuizAnswerFileError').addClass('hide').removeClass('scrollToTarget');
-		}
-	});
-}
-//Slide title validation
-if ($.trim($('.slideDescription').val()).length < 30)
-{
-	isFormValid = false;
-	$('.slideDescription').next().next('.slideDescriptionError').removeClass('hide').addClass('scrollToTarget');
-}
-else
-{
-	$('.slideDescription').next().next('.slideDescriptionError').addClass('hide').removeClass('scrollToTarget');
-}
-if(isFormValid==false)
-{
-	if($(".scrollToTarget:first").parents('.slideTogglebox').css("display") == "none")
-	{
-		$(".scrollToTarget:first").parents('.slideTogglebox').prev().prev('.slideToggle').trigger("click");
-	}
-	
-	$(".scrollToTarget:first").parents('.slideTogglebox').css("display", "block");
-	$('html body').animate({scrollTop: $(".scrollToTarget:first").offset().top-200 }, 1000);
-}
-return isFormValid;
-}
-//***********************************************Each feild validation***************************************************\\
-//Slide title validation
-$(document).on("keyup",".slideTitle",function() {
-if ($.trim($(this).val()).length < 10)
-{
-	$(this).next('.slideTitleError').removeClass('hide');
-}
-else
-{
-	$(this).next('.slideTitleError').addClass('hide');
-}
-});
-//Slide description validation
-$(document).on("keyup",".slideDescription",function() {
-if ($.trim($(this).val()).length < 30)
-{
-	$(this).next().next('.slideDescriptionError').removeClass('hide');
-}
-else
-{
-	$(this).next().next('.slideDescriptionError').addClass('hide');
-}
-});
-//Slide video url validation
-$(document).on("blur",".slideVideourl",function() {
-	var videoUrl=$(this).val();
-	if(!validFacebookVideoUrl(videoUrl) && !validVimeoVideoUrl(videoUrl) && !validDailymotionVideoUrl(videoUrl) && !validVineVideoUrl(videoUrl) && !validInstagramVideoUrl(videoUrl) && !validYoutubeVideoUrl(videoUrl))
-	{
-		$(this).next().next('.slideVideourlError').removeClass('hide');
-	}
-	else
-	{
-		$(this).next().next('.slideVideourlError').addClass('hide');
-	}
-});
-$(document).on("blur",".slideAudiourl",function() {
-	var audioUrl=$(this).val();
-	if(!validSoundcloudUrl(audioUrl) && !validMixcloudUrl(audioUrl) && !validReverbnationUrl(audioUrl))
-	{
-		$(this).next().next('.slideAudiourlError').removeClass('hide');
-	}
-	else
-	{
-		$(this).next().next('.slideAudiourlError').addClass('hide');
-	}
-});
-//Slide embed url validation
-$(document).on("blur",".slideEmbedurl",function() {
-	var embedUrl=$(this).val();
-	if(!validGooglePostUrl(embedUrl) && !validTwitterPostUrl(embedUrl) && !validPinterestPostUrl(embedUrl) && !validInstagramPostUrl(embedUrl) && !validFacebookPostUrl(embedUrl) && !validImgurPostUrl(embedUrl) && !validFlickerPostUrl(embedUrl) && !validTwitchPostUrl(embedUrl) && !validDeviantartPostUrl(embedUrl))
-	{
-		$(this).next().next('.slideEmbedurlError').removeClass('hide');
-	}
-	else
-	{
-		$(this).next().next('.slideEmbedurlError').addClass('hide');
-	}
-});
-//Slide map url validation
-$(document).on("blur",".slideMapurl",function() {
-	var mapUrl=$(this).val();
-	if(!validGoogleMapUrl(mapUrl) && !validBingMapUrl(mapUrl))
-	{
-		$(this).next().next('.slideMapurlError').removeClass('hide');
-	}
-	else
-	{
-		$(this).next().next('.slideMapurlError').addClass('hide');
-	}
-});
-//Slide iframe validation
-$(document).on("blur",".slideIframe",function() {
-	var iframeValue=$.trim($('.slideIframe').val()).toLowerCase();
-	if(iframeValue.indexOf("<iframe")==-1 || iframeValue.indexOf("src=")==-1 || iframeValue.indexOf("</iframe>")==-1)
-	{
-		isFormValid = false;
-		$('.slideIframurlError').removeClass('hide').addClass('scrollToTarget');
-	}
-	else
-	{
-		$('.slideIframurlError').addClass('hide').removeClass('scrollToTarget');
-	}
-});
-//Slide poll url validation
-$(document).on("keyup",".pollOptionsFeild",function() {
-if($.trim($(this).val()).length  < 3)
-{
-	$(this).next('.slidePolloptionError').removeClass('hide');
-}
-else
-{
-	$(this).next('.slidePolloptionError').addClass('hide');
-}
-});
-//Slide quiz result validation
-$(document).on("keyup",".slideQuizresultTitle",function() {
-if($.trim($(this).val()).length < 10)
-{
-	$(this).parent().next('.slideQuizresultTitleError').removeClass('hide');
-}
-else
-{
-	$(this).parent().next('.slideQuizresultTitleError').addClass('hide');
-}
-});
-//Slide quiz description validation
-$(document).on("keyup",".slideQuizresultDescription",function() {
-if($.trim($(this).val()).length < 30)
-{
-	$(this).next('.slideQuizresultDescriptionError').removeClass('hide');
-}
-else
-{
-	$(this).next('.slideQuizresultDescriptionError').addClass('hide');
-}
-});
-//***************************************************Form Submission******************************************************\\
-$("#submitPostForm").on("submit", function(event) {
-event.preventDefault();
-if(submitFormValidation()==true)
-{
-	$('#submitLoader').html('<div id="loading"><div id="loading-center"><div id="loading-center-absolute"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div></div></div>');
-	/* $.ajax({
-		url: "http://demo.nexthon.com/socialbuzz/admin/includes/submitSlideRequest.php",
-		type: "POST",
-		data: new FormData( this ),
-		processData: false,
-		contentType: false,
-		dataType: "json",
-		success: function(response) {
-			if(response.error==1)
-			{
-				$('html body').animate({scrollTop: $("#dangerAlert").offset().top-500 }, 1000);
-				$('#loading').fadeOut('slow',function(){$(this).remove();});
-				$('#dangerAlert').removeClass('hide');
-				$('.errorMsg').html(response.errorMsg);
-			}
-			else
-			{
-				window.location='slides.php?pid=151';
-			}
-		}
-	}); */
-}
-});
-</script>
-<script src="/js/bootstrap.js" type="text/javascript"></script>
-<script src="/js/bootoption.js" type="text/javascript"></script>
-<script src="/js/app.js" type="text/javascript"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+					<a href="#menu-toggle" id="menu-toggle">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+				</button>
+				<a href="index.html">
+					<img class="img-robots-header" src="assets/img/logo-robots.png" alt="image">
+					<div class="font-logo-header"></div>
+				</a>
+			</div> <!-- fim div .navbar-header -->
+
+			<div class="navbar-collapse collapse" id="">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#" target="_blank">
+							<i class="fa fa-globe" aria-hidden="true"></i>
+							Visualizar site
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							Steve Zoe
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="perfil-user.html"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
+						</ul> <!-- fim ul .dropdown-menu -->
+					</li> <!-- fim li .dropdown -->
+				</ul> <!-- fim ul .nav .nav-bar .navbar-right -->
+			</div> <!-- fim div .navbar-collapse .collapse #navbarCollapse -->
+		</div> <!-- fim div .container -->
+	</nav> <!-- fim nav .navbar .navbar-inverse .navbar-fixed-top -->
+</header>
+
+<div id="wrapper">
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<!-- logo cliente -->
+			<li>
+				<img class="img-cliente-sidebar" src="assets/img/logo-cliente.png" alt="image">
+			</li>
+			<!-- end logo cliente -->
+
+			<!-- menu -->
+			<li class="active">
+				<a class="border-a-menu" href="dashboard.html">
+					<i class="fa fa-dashboard i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Dashboard</span>
+				</a>
+			</li>
+			<!--Drop menu -->
+			<li>
+				<a href="#drop1" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-rss i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Blog</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop1" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="novo-post.html">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+							<span class="margin-font">Escrever novo Post</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="meus-post.html">
+							<i class="fa fa-rss-square" aria-hidden="true"></i>
+							<span class="margin-font">Minhas Postagens</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="todas-posts.html">
+							<i class="fa fa-commenting " aria-hidden="true"></i>
+							<span class="margin-font">Todas as Postagens</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop3" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-home fa-lg i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Home</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop3" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="slide-home.html">
+							<i class="fa fa-image" aria-hidden="true"></i>
+							<span class="margin-font">Slide</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="add-slide.html">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="margin-font">Adicionar Slide</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop2" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-users i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Meus Clientes</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop2" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-cliente.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="listar-clientes.html">
+							<i class="fa fa-users" aria-hidden="true"></i>
+							<span class="margin-font">Lista de clientes</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="add-cliente.html">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="margin-font">Add novo clientes</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop4" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-users i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Meus Parceiros</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop4" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-cliente.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="listar-parceiro.html">
+							<i class="fa fa-users" aria-hidden="true"></i>
+							<span class="margin-font">Lista de Parceiros</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="add-parceiro.html">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="margin-font">Add novo Parceiro</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop5" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-briefcase i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Meus Serviços</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop5" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-servicos.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="listar-servicos.html">
+							<i class="fa fa-briefcase" aria-hidden="true"></i>
+							<span class="margin-font">Lista Meus Serviços</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="add-servicos.html">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="margin-font">Add novos Serviços</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop6" class="link-ativo list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-users i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Quem Somos</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse in ul-dropdown-color" id="drop6" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-quem-somos.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="slide-quem-somos.html">
+							<i class="fa fa-briefcase" aria-hidden="true"></i>
+							<span class="margin-font">Slide</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop7" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-location-arrow i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Localização</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop7" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-localizaçao.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="endereco.htmlml">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							<span class="margin-font">Endereço</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="mapa.html">
+							<i class="fa fa-map" aria-hidden="true"></i>
+							<span class="margin-font">Mapas</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop10" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-user i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Equipe</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop10" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-equipe.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="listar-equipe.html">
+							<i class="fa fa-briefcase" aria-hidden="true"></i>
+							<span class="margin-font">Lista Equipe</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="add-equipe.html">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="margin-font">Add novo membro equipe</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop8" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-envelope i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Pagina Contato</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop8" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="descri-contato.html">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<span class="margin-font">Descrição</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="add-equipe.html">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<span class="margin-font">Configuração de Email</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<!--Drop menu -->
+			<li>
+				<a href="#drop9" class="list-group border-a-menu" data-toggle="collapse" data-parent="#MainMenu" style="margin-bottom: 0px !important;">
+					<i class="fa fa-key i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Usuários do Admin</span>
+					<i class="fa fa-sort-desc i-ajuste-right" aria-hidden="true"></i>
+				</a>
+				<ul class="list-group collapse ul-dropdown-color" id="drop9" style="margin-bottom: 0px !important;">
+					<li>
+						<a class="border-a-menu" href="listar-usuarios.html">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<span class="margin-font">Listar Usuarios</span>
+						</a>
+					</li>
+					<li>
+						<a class="border-a-menu" href="dashboard.html">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="margin-font">Add Usuarios</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- fim Drop menu -->
+
+			<li>
+				<a class="border-a-menu" href="page-social-midia.html">
+					<i class="fa fa-user i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Midia Social</span>
+				</a>
+			</li>
+			<li>
+				<a class="border-a-menu" href="dashboard.html">
+					<i class="fa fa-cogs i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Configurações</span>
+				</a>
+			</li>
+			<li>
+				<a class="border-a-menu" href="dashboard.html">
+					<i class="fa fa-sign-out i-ajuste" aria-hidden="true"></i>
+					<span class="margin-font">Sair</span>
+				</a>
+			</li>
+
+
+		</ul> <!-- fim ul .sidebar-nav -->
+	</div><!-- fim div #sidebar-wrapper -->
+	<!-- fim Sidebar -->
+
+	<!-- Page Content -->
+	<div id="page-content-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 id="subir"><i class="fa fa-commenting" aria-hidden="true"></i> Descrição de Quem Somos</h2>
+					<ol class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Pagina Quem Somos</a></li>
+						<li class="active">Descrição Quem Somos</li>
+					</ol>
+					<div class="separador-1"></div> <!-- fim div .separador-1 -->
+					<div class="alert alert-success alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>Tudo certo!</strong>
+						Suas alterações foram salvas!
+						<strong>:)</strong>
+					</div>
+
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>Ops!</strong>
+						Algo deu errado, volte e arrume os campos abaixo!
+						<strong>:(</strong>
+					</div>
+
+					<div class="row">
+						<div class="col-md-8 col-sm-12">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Descrição da Empresa</label>
+								<textarea class="form-control" rows="10"></textarea>
+								<p class="text-info">
+									<i class="fa fa-question-circle " aria-hidden="true"></i>
+									No campo acima faça uma descrição detalhada de sua empresa!
+								</p>
+							</div><!-- fim div .input-group -->
+
+							<div class="form-group">
+								<label for="exampleInputEmail1">Descrição do Box "Por que nos escolher"</label>
+								<textarea class="form-control" rows="10"></textarea>
+								<p class="text-info">
+									<i class="fa fa-question-circle " aria-hidden="true"></i>
+									No campo acima faça uma descrição do por que o cliente deve nos escolher!
+								</p>
+							</div><!-- fim div .input-group -->
+
+							<div class="form-group">
+								<label for="exampleInputEmail1">Descrição do Box "Nossos Valores"</label>
+								<textarea class="form-control" rows="10"></textarea>
+								<p class="text-info">
+									<i class="fa fa-question-circle " aria-hidden="true"></i>
+									No campo acima faça uma descrição dos Valores da empresa!
+								</p>
+							</div><!-- fim div .input-group -->
+
+							<div class="form-group">
+								<label for="exampleInputEmail1">Descrição do Box "Visão"</label>
+								<textarea class="form-control" rows="10"></textarea>
+								<p class="text-info">
+									<i class="fa fa-question-circle " aria-hidden="true"></i>
+									No campo acima faça uma descrição da visão da empresa!
+								</p>
+							</div><!-- fim div .input-group -->
+
+							<button type="submit" class="btn btn-success" id="subir">
+								<i class="fa fa-check-square-o"></i>
+								Salvar
+							</button>
+
+
+
+						</div><!-- fim div .col-md-12 -->
+					</div><!-- fim div .row -->
+				</div> <!-- fim div .col-lg-12 -->
+			</div>  <!-- fim div .row -->
+		</div> <!-- fim div .container-fluid -->
+	</div> <!-- fim div #page-content-wrapper -->
+	<!-- fim Page Content -->
+</div>  <!-- fim div #wrapper -->
+
+<!-- footer -->
+<footer class="bg-footer">
+	<div class="container">
+		<div class="row">
+
+		</div> <!-- fim div row -->
+	</div> <!-- fim div .container -->
+</footer>
+<!-- fim footer -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.js"></script>
 
 <script>
-	$('.selectpicker').selectpicker();
-	$(".alert:not(.no-fadeOut):not(.alert-demo)").delay(3000).fadeOut("slow");
-	$(".alert-demo").delay(7000).fadeOut("slow");
-</script></body>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+</script>
+</body>
 </html>

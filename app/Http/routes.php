@@ -59,10 +59,44 @@ Route::post("alterar-quem-somos/{id}", ["as" => "admin.quem-somos.update", "uses
 
 Route::get("excluir-quem-somos/{id}", ["as" => "admin.quem-somos.destroy", "uses" => "QuemSomosController@destroy"]);
 
-// ----------------------------------------  Textos Missão, Valores e Visão  ----------------------------------- //
+// ----------------------------- Textos Missão, Valores e Visão  ----------------------------------- //
 
 Route::get("edit-institucional", ["as" => "admin.institucional.edit", "uses" => "institucionalController@edit"]);
 
 Route::post("alterar-institucional", ["as" => "admin.institucional.update", "uses" => "institucionalController@update"]);
 
 /* Fim Quem Somos */
+
+//-----------------------------------------  Equipe ------------------------------------------------------------
+
+Route::get('equipe', ['as' => 'admin.equipe.index', 'uses' => 'EquipeController@index']);
+
+Route::get('add-equipe', ['as' => 'admin.equipe.create', 'uses' => 'EquipeController@create']);
+
+/* Fim Equipe */
+
+//-----------------------------------------  Usuários ------------------------------------------------------------
+
+Route::get('usuarios', ['as' => 'admin.usuarios.index', 'uses' => 'UserController@index']);
+
+Route::get('add-usuarios', ['as' => 'admin.usuarios.create', 'uses' => 'UserController@create']);
+
+Route::get('edit-usuarios', ['as' => 'admin.usuarios.edit', 'uses' => 'UserController@edit']);
+
+/* Fim Usuários */
+
+//-----------------------------------------  Parceiros ------------------------------------------------------------
+
+Route::get('meus-parceiros', ['as' => 'admin.parceiros.index', 'uses' => 'ParceiroController@index']);
+
+Route::get('add-parceiros', ['as' => 'admin.parceiros.create', 'uses' => 'ParceiroController@create']);
+
+//-----------------------------------------  Slides ------------------------------------------------------------
+
+/* Fim Slides */
+
+//-----------------------------------------  Config Email ------------------------------------------------------------
+
+Route::get('config-email', function(){
+    return view('admin.contato.config');
+});

@@ -16,9 +16,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2><i class="fa fa-user" aria-hidden="true"></i> Dashboard</h2>
+                    <h2><i class="fa fa-envelope" aria-hidden="true"></i> Configurar pagina contato </h2>
                     <ol class="breadcrumb">
-                        <li class="active">Dashboard</li>
+                        <li><a href="dashboard.html">Dashbord</a></li>
+                        <li><a href="conf-page-contato.html">Pagina Contato</a></li>
+                        <li class="active">Configurar pagina contato </li>
                     </ol>
                     <div class="separador-1"></div> <!-- fim div .separador-1 -->
 
@@ -39,17 +41,26 @@
                         Algo deu errado, volte e arrume os campos abaixo!
                         <strong>:(</strong>
                     </div><!-- fim div .alert.alert-danger.alert-dismissible -->
+
                     <!-- FIM Alertas da pagina -->
 
-
-
-
-
-                    <br>
-                    <button type="submit" class="btn btn-success" id="subir">
-                        <i class="fa fa-check-square-o"></i>
-                        Salvar
-                    </button>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email que chegara para voce as mensagens</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email que chegara para voce as mensagens">
+                                <p class="text-info">
+                                    <i class="fa fa-question-circle " aria-hidden="true"></i>
+                                    O campo acima deve conter o email da sua empresa que chegara as mensagens!
+                                </p>
+                            </div><!-- fim div .input-group -->
+                            <br>
+                            <button type="submit" class="btn btn-success" id="subir">
+                                <i class="fa fa-check-square-o"></i>
+                                Salvar
+                            </button>
+                        </div><!-- fim div .col-md-12 -->
+                    </div><!-- fim div .row -->
                 </div> <!-- fim div .col-lg-12 -->
             </div>  <!-- fim div .row -->
         </div> <!-- fim div .container-fluid -->
