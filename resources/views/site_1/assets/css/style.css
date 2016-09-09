@@ -1,0 +1,233 @@
+/*------------------
+* ----- 1.geral     ------
+* ----- 2.header     ------
+* ----- 3.menu     ------
+* ----- 4.footer     ------
+* ----- 5.bg        ------
+* ----- 6.typograph ------
+* ----- 7.Contato-page ------
+
+
+------------------*/
+
+
+
+/*------1 -Geral-------
+---------------------*/
+.tst{
+    border: 1px solid red;
+}
+
+.divisor-default{
+    margin: 40px 0px 40px 0px;
+}
+
+section{
+    padding: 20px 0px 30px 0px !important;
+}
+
+
+
+/*------2 -header-------
+---------------------*/
+
+
+
+/*------3 - menu-------
+---------------------*/
+
+
+
+/*------4 - footer-------
+---------------------*/
+
+.size-footer{
+    min-height: 400px;   
+}
+
+.row-adjust-box-footer{
+    margin-top: 50px;
+}
+
+.linha-titulo-footer{
+    border-bottom: 2px solid #0084b4;
+    width: 130px;
+    margin-bottom: 20px;
+}
+
+.ajuste-box-footer-termos{
+    margin-top: 5px;
+}
+
+
+
+
+
+/*------5 -bg  -------
+---------------------*/
+
+.bg-section-header-contato{
+    background-image: url(../img/kkk.png) top center no-repeat;
+    background: green;
+}
+
+
+
+/*--- 6 -typograph --
+---------------------*/
+
+.size-fonte-header{
+    font-weight: 800;
+    font-size: 50px;
+}
+
+
+
+
+/*--- 7 - Contato-page-----
+--------------------------*/
+
+.header-size-contato{
+    height:250px;
+    margin-top: -20px;
+}
+
+.ajuste-bloco-header-page-contato{
+    margin-top: 60px;
+}
+
+.size-fonte-header-form-contato{
+    font-weight: 800;
+}
+
+.linha-header{
+    border: 1px solid #363636;
+    width: 50px;
+    top: -20px;
+}
+
+.ajust-icone-header{
+    padding:0px 10px 0px 10px;
+}
+
+.ajust-icone-header-contato{
+    height: 100px;
+    padding:0px 15px 0px 0px;
+    float: left;
+}
+
+.ajust-margin-subheader{
+    margin-bottom: 30px;
+}
+
+.border-box-contato{
+    height: 100px;
+    border-right: 1px solid #c3c3c3;
+    margin-bottom: 20px;
+}
+
+.ajuste-espacamento-box-contato{
+    padding: 15px 15px 15px 20px;
+}
+
+.maps{
+    height: 400px;
+    background-image: url(../img/maps.png);
+    
+}
+
+.carrosel-contato{
+    height: 200px;
+}
+
+
+/*--- 7 - quem somos -----
+--------------------------*/
+
+.box-missao-quem-somos{
+    min-height: 200px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.img-box-missao-quem-somos{
+    height: 200px;
+    width: 150px;
+    float: left;
+    background-image: url(../img/icon-missoes-1.png);
+    margin-right: 20px;
+    left: -50px;
+}
+
+.fix-box-missao-quem-somos{
+    margin-top: 120px;   
+}
+
+.img-box-missao-quem-somos-2{
+    height: 200px;
+    width: 150px;
+    float: left;
+    background-image: url(../img/icon-missoes-2.png);
+    margin-right: 20px;
+    left: -50px;
+}
+
+.bg-box-missoes{
+    min-height: 670px;
+    background-image: url(../upload/banner/bg-missoes.png);
+}
+
+.box-video-quem-somos{
+    border: 5px solid #fff;
+    border-radius: 8px;
+}
+
+.fix-texto-box-newsletter{
+    font-weight: 800;
+}
+
+.fix-box-form-newsletter{
+    margin-top: 30px;
+}
+
+.radius-icon-quem-somos{
+    height: 60px;
+    width: 60px;
+    border: 1px solid #777777;
+    background-color: #f7f7f7;
+    border-radius: 50px;
+    padding: 22px;
+}
+
+.radius-icon-quem-somos:hover{
+    border: 1px solid #0084b4;
+    background-color: #0084b4;
+    padding: 22px;
+    color: #fff;
+}
+
+.a-leia-mais-link{
+    color: #363636;
+}
+
+.a-leia-mais-link:hover{
+    color: #0084b4;
+}
+
+.fix-box-servicos-quem-somos{
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
