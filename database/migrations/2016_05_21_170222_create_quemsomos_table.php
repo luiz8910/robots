@@ -15,7 +15,10 @@ class CreateQuemsomosTable extends Migration
 	{
 		Schema::create('quemsomos', function(Blueprint $table) {
             $table->increments('id');
-			$table->string("imagem");
+			$table->string("description");
+			$table->string("whyUs");
+			$table->string('ourValues');
+			$table->string('vision');
             $table->timestamps();
 		});
 	}

@@ -13,7 +13,7 @@
 
 Route::get('/', ["as" => "admin.dashboard.index", "uses" => "DashboardController@index"]);
 
-/* Serviços */
+//---------------------------------------- Serviços -----------------------------------------------------///
 
 Route::get("meus-servicos", ["as" => "admin.servicos.index", "uses" => "ServicoController@index"]);
 
@@ -29,7 +29,7 @@ Route::post("alterar-servicos/{id}", ["as" => "admin.servicos.update", "uses" =>
 
 /* Fim Serviços */
 
-/* Clientes */
+//------------------------------------------ Clientes -----------------------------------------------------///
 
 Route::get("meus-clientes", ["as" => "admin.clientes.index", "uses" => "ClienteController@index"]);
 
@@ -45,7 +45,7 @@ Route::get("excluir-clientes/{id}", ["as" => "admin.clientes.destroy", "uses" =>
 
 /* Fim Clientes */
 
-/* Quem Somos */
+//------------------------------------------- Quem Somos ----------------------------------------------------//
 
 Route::get("listar-quem-somos", ["as" => "admin.quem-somos.index", "uses" => "QuemSomosController@index"]);
 

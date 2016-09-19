@@ -1,176 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-<link rel="shortcut icon" href="">
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-<link href="css/bootoption.css" rel="stylesheet" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="css/theme-orangeblue.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<script src="js/jquery.js"></script>
-<link href="css/preloader.css" rel="stylesheet">
-<div id="loading">
-<div id="loading-center">
-<div id="loading-center-absolute">
-<div class="cssload-container">
-<div class="cssload-speeding-wheel"></div>
-</div>
-</div>
-</div>
-</div>
-    <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$('#loading').fadeOut('slow',function(){$(this).remove();});
-		});
-	</script>
-<div id="submitLoader"></div>
-</head> <title>Dashboard | Slide Quem Somos</title>
-<link href="plugins/typeahead/typeahead.css" rel="stylesheet" type="text/css"/>
-<body class="skin-blue">
-<header class="header">
-        <a target="_blank" href="" class="logo secondary-bg-color">
-            <img src="images/logo-h2o-painel.png">
-        </a>
-        <nav class="navbar navbar-static-top primary-bg-color" role="navigation">
-            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Menu</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#" target="_blank"><i class="fa fa-globe"></i> Visualizar Site</a>
-                    </li>
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="glyphicon glyphicon-user"></i>
-                            <span>administrador <i class="caret"></i></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="user-footer">
-                                <a href="#">
-                                <i class="fa fa-user"></i> Meu Perfil</a>
-                                <a href="l#">
-                                <i class="fa fa-sign-out"></i> Sair</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-<div class="wrapper row-offcanvas row-offcanvas-left">
-@include("admin.menu.menu-lateral")
-<aside class="right-side">
-<section class="content-header">
-    <h1>
-    <i class="fa fa-newspaper-o"></i> Slide Quem Somos
-    </h1>
-</section>
-<section class="content">
-    <div class="box-header">
-        <h3 class="box-title">
-            <i class="fa fa-newspaper-o"></i> Slide Quem Somos
-        </h3>
-    </div>
-<div class="col-xs-12">
-<a href="{{ route("admin.quem-somos.create") }}" class="btn btn-success">
-<i class="fa fa-plus"></i> Add Imagem para Slide
-</a>
-<div class="box box-primary box-solid">
-<div class="box-header" style="padding:10px !important">
-Slide Quem Somos 
-</div>
-    <div class="box-body">
-        <div class="table-responsive table-bordered">
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <th>Imagem</th>
-                        <th width="100px">A&ccedil;&otilde;es</th>
-                    </tr>
-                    @foreach($quemSomos as $q)
-                        <tr>
+    @include('admin.include.head')
+</head>
+<body>
+<header>
+    @include('admin.include.header')
+</header>
 
-                            <td>
-                                <img width="200" src="{{ url("uploads/quem-somos".$q->imagem) }}" />
-                            </td>
+<div id="wrapper">
+    @include('admin.include.menu-lateral')
 
-                            <td>
-                                <a href="{{ route("admin.quem-somos.edit", [$q->id]) }}">
-                                    <button class="btn btn-sm btn-info">
-                                        <i class="fa fa-pencil"></i>
-                                    </button>
-                                </a>
-                                <a data-toggle="modal" id="2" href="#deleteModal" class="deleteEmoticon">
-                                    <button class="btn btn-sm btn-danger">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </a>
-                            </td>
-
-                        </tr>
-
-                        <script>
-
-                            $(".deleteEmoticon").click(function()
-                            {
-                                var id = $(this).attr('id');
-                                $(".adp").attr('href','{{ route("admin.quem-somos.destroy", [$q->id]) }}');
-                            });
-                        </script>
-                    @endforeach
-                    <div id="deleteModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header mod-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i></button>
-                                    <h4 class="modal-title" id="myModalLabel">Excluir Imagem?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-xs-12 mod-text">
-                                            <p class="modalSingleLineText"><i class="fa fa-exclamation-triangle fa-lg fa-fw"></i> Você deseja excluir esta Imagem?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer text-center">
-                                    <a href="" class="adp btn-danger btn btn-md">Excluir</a>
-                                    <button type="button" class="btn-default btn btn-md" data-dismiss="modal">Fechar</button>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 id="subir"><i class="fa fa-commenting" aria-hidden="true"></i> Descrição de Quem Somos</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pagina Quem Somos</a></li>
+                        <li class="active">Descrição Quem Somos</li>
+                    </ol>
+                    <div class="separador-1"></div> <!-- fim div .separador-1 -->
+                    <div class="alert alert-success alert-dismissible" role="alert" hidden>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Tudo certo!</strong>
+                        Suas alterações foram salvas!
+                        <strong>:)</strong>
                     </div>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    
-    
 
-</div> 
-</div>
-</section>
-</aside>
-</div>
-    
-    
-    
-<script src="plugins/typeahead/typeahead.js" type="text/javascript"></script>
+                    <div class="alert alert-danger alert-dismissible" id="alert-danger" role="alert" hidden>
+                        <button type="button" class="close" id="closeAlert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Atenção</strong>
+                        <p>Algo deu errado, volte e arrume os campos abaixo: </p><br>
+                        <ul id="error"></ul>
+                    </div>
+
+                    <div class="row">
+                        <form action="" id="editQS">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descrição da Empresa</label>
+                                    <textarea class="form-control" rows="10" id="description">{{ $quemSomos->description }}</textarea>
+                                    <p class="text-info">
+                                        <i class="fa fa-question-circle " aria-hidden="true"></i>
+                                        No campo acima faça uma descrição detalhada de sua empresa!
+                                    </p>
+                                </div><!-- fim div .input-group -->
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descrição do Box "Por que nos escolher"</label>
+                                    <textarea class="form-control" rows="10" id="whyUS">{{ $quemSomos->whyUs }}</textarea>
+                                    <p class="text-info">
+                                        <i class="fa fa-question-circle " aria-hidden="true"></i>
+                                        No campo acima faça uma descrição do por que o cliente deve nos escolher!
+                                    </p>
+                                </div><!-- fim div .input-group -->
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descrição do Box "Nossos Valores"</label>
+                                    <textarea class="form-control" rows="10" id="ourValues">{{ $quemSomos->ourValues }}</textarea>
+                                    <p class="text-info">
+                                        <i class="fa fa-question-circle " aria-hidden="true"></i>
+                                        No campo acima faça uma descrição dos Valores da empresa!
+                                    </p>
+                                </div><!-- fim div .input-group -->
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descrição do Box "Visão"</label>
+                                    <textarea class="form-control" rows="10" id="vision">{{ $quemSomos->vision }}</textarea>
+                                    <p class="text-info">
+                                        <i class="fa fa-question-circle " aria-hidden="true"></i>
+                                        No campo acima faça uma descrição da visão da empresa!
+                                    </p>
+                                </div><!-- fim div .input-group -->
+
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fa fa-check-square-o"></i>
+                                    Salvar
+                                </button>
 
 
 
-<script src="js/bootstrap.js" type="text/javascript"></script>
-<script src="js/bootoption.js" type="text/javascript"></script>
-<script src="js/app.js" type="text/javascript"></script>
+                            </div><!-- fim div .col-md-12 -->
+                        </form>
 
-<script>
-	$('.selectpicker').selectpicker();
-	$(".alert:not(.no-fadeOut):not(.alert-demo)").delay(3000).fadeOut("slow");
-	$(".alert-demo").delay(7000).fadeOut("slow");
-</script> </body>
+                    </div><!-- fim div .row -->
+                </div> <!-- fim div .col-lg-12 -->
+            </div>  <!-- fim div .row -->
+        </div> <!-- fim div .container-fluid -->
+    </div> <!-- fim div #page-content-wrapper -->
+    <!-- fim Page Content -->
+</div>  <!-- fim div #wrapper -->
+
+<!-- footer -->
+<footer class="bg-footer">
+    <div class="container">
+        <div class="row">
+
+        </div> <!-- fim div row -->
+    </div> <!-- fim div .container -->
+</footer>
+<!-- fim footer -->
+
+@include('admin.include.scripts')
+</body>
+</html>
 </html>

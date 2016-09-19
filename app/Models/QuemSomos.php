@@ -13,7 +13,7 @@ class QuemSomos extends Model implements Transformable
     protected $table = "quemsomos";
 
     protected $fillable = [
-        "imagem"
+        "description", 'whyUs', 'ourValues', 'vision'
     ];
 
 }

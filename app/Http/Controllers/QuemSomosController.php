@@ -31,7 +31,7 @@ class QuemSomosController extends Controller
      */
     public function index()
     {
-        $quemSomos = $this->quemSomosRepository->all();
+        $quemSomos = $this->quemSomosRepository->first();
 
         return view("admin.quem-somos.index", compact("quemSomos"));
     }
@@ -98,26 +98,30 @@ class QuemSomosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(QuemSomosRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $imagem = $this->quemSomosRepository->visible(["imagem"])->find($id);
+//        $imagem = $this->quemSomosRepository->visible(["imagem"])->find($id);
+//
+//        if(file_exists(public_path()."/uploads/quem-somos" . $imagem->imagem))
+//        {
+//            unlink(public_path()."/uploads/quem-somos" . $imagem->imagem);
+//        }
+//
+//        $file = $request->file('imagem');
+//
+//        $data = [
+//            "imagem" => $file
+//        ];
+//
+//        $this->quemSomosRepository->update($data, $id);
+//
+//        Storage::disk("public_local")->put("quem-somos".$file, File::get($file));
+//
+//        return redirect()->route("admin.quem-somos.index");
 
-        if(file_exists(public_path()."/uploads/quem-somos" . $imagem->imagem))
-        {
-            unlink(public_path()."/uploads/quem-somos" . $imagem->imagem);
-        }
+        $data = $request->all();
 
-        $file = $request->file('imagem');
-
-        $data = [
-            "imagem" => $file
-        ];
-
-        $this->quemSomosRepository->update($data, $id);
-
-        Storage::disk("public_local")->put("quem-somos".$file, File::get($file));
-
-        return redirect()->route("admin.quem-somos.index");
+        return $this->quemSomosRepository->update($data, $id);
     }
 
     /**
