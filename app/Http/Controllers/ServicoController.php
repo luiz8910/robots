@@ -1,12 +1,12 @@
 <?php
 
-namespace Admin\Http\Controllers;
+namespace admin\Http\Controllers;
 
-use Admin\Repositories\ServicoRepository;
+use admin\Repositories\ServicoRepository;
 use Illuminate\Http\Request;
 
-use Admin\Http\Requests;
-use Admin\Http\Requests\ServicoRequest;
+use admin\Http\Requests;
+use admin\Http\Requests\ServicoRequest;
 
 class ServicoController extends Controller
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Admin\Repositories;
+namespace admin\Repositories;
 
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
  * Interface ServicoRepository
- * @package namespace Admin\Repositories;
+ * @package namespace admin\Repositories;
  */
 interface ServicoRepository extends RepositoryInterface
 {

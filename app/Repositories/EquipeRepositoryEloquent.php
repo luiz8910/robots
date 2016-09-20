@@ -1,16 +1,16 @@
 <?php
 
-namespace Admin\Repositories;
+namespace admin\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Admin\Repositories\EquipeRepository;
-use Admin\Models\Equipe;
-use Admin\Validators\EquipeValidator;
+use admin\Repositories\EquipeRepository;
+use admin\Models\Equipe;
+use admin\Validators\EquipeValidator;
 
 /**
  * Class EquipeRepositoryEloquent
- * @package namespace Admin\Repositories;
+ * @package namespace admin\Repositories;
  */
 class EquipeRepositoryEloquent extends BaseRepository implements EquipeRepository
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace Admin\Repositories;
+namespace admin\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Admin\Repositories\QuemSomosRepository;
-use Admin\Models\QuemSomos;
-use Admin\Validators\QuemSomosValidator;
+use admin\Repositories\QuemSomosRepository;
+use admin\Models\QuemSomos;
+use admin\Validators\QuemSomosValidator;
 
 /**
  * Class QuemSomosRepositoryEloquent
- * @package namespace Admin\Repositories;
+ * @package namespace admin\Repositories;
  */
 class QuemSomosRepositoryEloquent extends BaseRepository implements QuemSomosRepository
 {

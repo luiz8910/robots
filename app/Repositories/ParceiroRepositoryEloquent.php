@@ -1,16 +1,16 @@
 <?php
 
-namespace Admin\Repositories;
+namespace admin\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Admin\Repositories\ParceiroRepository;
-use Admin\Models\Parceiro;
-use Admin\Validators\ParceiroValidator;
+use admin\Repositories\ParceiroRepository;
+use admin\Models\Parceiro;
+use admin\Validators\ParceiroValidator;
 
 /**
  * Class ParceiroRepositoryEloquent
- * @package namespace Admin\Repositories;
+ * @package namespace admin\Repositories;
  */
 class ParceiroRepositoryEloquent extends BaseRepository implements ParceiroRepository
 {

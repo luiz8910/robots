@@ -1,15 +1,15 @@
 <?php
 
-namespace Admin\Http\Controllers;
+namespace admin\Http\Controllers;
 
 
-use Admin\Repositories\ClienteRepository;
+use admin\Repositories\ClienteRepository;
 use Illuminate\Http\Request;
 
-use Admin\Http\Requests;
+use admin\Http\Requests;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use Admin\Http\Requests\ClienteRequest;
+use admin\Http\Requests\ClienteRequest;
 
 class ClienteController extends Controller
 {

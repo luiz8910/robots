@@ -71,25 +71,21 @@ $(function () {
         if(!fail)
         {
             id = 1;
-            var form = [];
-
-            form = $(this).serialize();
-
-            alert(form);
-
+            var form = [description, whyUS, ourValues, vision];
 
             var request = $.ajax({
-                url: 'alterar-quem-somos/' + id,
+                url: 'alterar-quem-somos/' + id + '-' + form,
                 method: 'POST',
                 data: form,
                 dataType: 'json'
             });
 
             request.done(function(e){
-
+                console.log('done');
             });
 
             request.fail(function (e) {
+                console.log('fail');
                 console.log(e);
             })
         }

@@ -55,7 +55,7 @@ Route::get("edit-quem-somos/{id}", ["as" => "admin.quem-somos.edit", "uses" => "
 
 Route::post("gravar-quem-somos", ["as" => "admin.quem-somos.store", "uses" => "QuemSomosController@store"]);
 
-Route::post("alterar-quem-somos/{id}", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
+Route::post("alterar-quem-somos/{id}-{form}", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
 
 Route::get("excluir-quem-somos/{id}", ["as" => "admin.quem-somos.destroy", "uses" => "QuemSomosController@destroy"]);
 
@@ -100,3 +100,7 @@ Route::get('add-parceiros', ['as' => 'admin.parceiros.create', 'uses' => 'Parcei
 Route::get('config-email', function(){
     return view('admin.contato.config');
 });
+
+//------------------------------------------  Site -------------------------------------------------------------------
+
+Route::get('quemsomos', 'QuemSomosController@indexSite');

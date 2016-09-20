@@ -1,10 +1,10 @@
 <?php
 
-namespace Admin\Http\Controllers\Auth;
+namespace admin\Http\Controllers\Auth;
 
-use Admin\User;
+use admin\User;
 use Validator;
-use Admin\Http\Controllers\Controller;
+use admin\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller

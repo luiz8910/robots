@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Console\Commands;
+namespace admin\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

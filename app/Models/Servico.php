@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Models;
+namespace admin\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;

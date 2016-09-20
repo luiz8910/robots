@@ -168,7 +168,7 @@
                 </a>
                 <ul class="list-group collapse ul-dropdown-color" id="drop6" style="margin-bottom: 0px !important;">
                     <li>
-                        <a class="border-a-menu" href="{{ route('admin.quem-somos.edit') }}">
+                        <a class="border-a-menu" href="{{ route('admin.quem-somos.index') }}">
                             <i class="fa fa-commenting" aria-hidden="true"></i>
                             <span class="margin-font">Descrição</span>
                         </a>

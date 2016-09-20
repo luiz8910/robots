@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: Admin
-        psr4_prefix: Admin
+        namespace: admin
+        psr4_prefix: admin
         src_path: app

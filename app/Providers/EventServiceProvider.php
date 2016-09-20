@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Providers;
+namespace admin\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Admin\Events\SomeEvent' => [
-            'Admin\Listeners\EventListener',
+        'admin\Events\SomeEvent' => [
+            'admin\Listeners\EventListener',
         ],
     ];
 
