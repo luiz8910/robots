@@ -34,6 +34,10 @@ class QuemSomosController extends Controller
     {
         $quemSomos = $this->quemSomosRepository->first();
 
+        $quemSomos->linkVideo = str_replace('-', '/', $quemSomos->linkVideo);
+
+        //$quemSomos->linkVideo = str_replace(';', '?', $quemSomos->linkVideo);
+
         return view("admin.quem-somos.index", compact("quemSomos"));
     }
 
@@ -41,7 +45,11 @@ class QuemSomosController extends Controller
     {
         $quemSomos = $this->quemSomosRepository->first();
 
-        return view("site.quem-somos", compact("quemSomos"));
+        $quemSomos->linkVideo = str_replace('-', '/', $quemSomos->linkVideo);
+
+        $quemSomos->linkVideo = str_replace(';', '?', $quemSomos->linkVideo);
+
+        return view("site.quem-somos.index", compact("quemSomos"));
     }
 
     /**
@@ -106,19 +114,22 @@ class QuemSomosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id, $form)
+    public function update($form)
     {
-        $vetor = explode(',', $form);
+        $id = 1;
+
+        $vetor = json_decode($form);
 
 
          DB::table('quemsomos')
              ->where('id', $id)
             ->update(
                 [
-                    'description' => $vetor[0],
-                    'whyUs' => $vetor[1],
-                    'ourValues' => $vetor[2],
-                    'vision' => $vetor[3],
+                    'description' => $vetor->index0,
+                    'whyUs' => $vetor->index1,
+                    'ourValues' => $vetor->index2,
+                    'vision' => $vetor->index3,
+                    'linkVideo' => $vetor->index4,
                 ]
             );
 

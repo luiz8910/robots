@@ -19,6 +19,7 @@ class CreateQuemsomosTable extends Migration
 			$table->string("whyUs");
 			$table->string('ourValues');
 			$table->string('vision');
+			$table->string('linkVideo');
             $table->timestamps();
 		});
 	}

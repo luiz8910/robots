@@ -55,7 +55,7 @@ Route::get("edit-quem-somos/{id}", ["as" => "admin.quem-somos.edit", "uses" => "
 
 Route::post("gravar-quem-somos", ["as" => "admin.quem-somos.store", "uses" => "QuemSomosController@store"]);
 
-Route::post("alterar-quem-somos/{id}-{form}", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
+Route::post("alterar-quem-somos/{form}", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
 
 Route::get("excluir-quem-somos/{id}", ["as" => "admin.quem-somos.destroy", "uses" => "QuemSomosController@destroy"]);
 
@@ -104,3 +104,5 @@ Route::get('config-email', function(){
 //------------------------------------------  Site -------------------------------------------------------------------
 
 Route::get('quemsomos', 'QuemSomosController@indexSite');
+
+Route::post('newsletter/{email}', 'ControllerNewsletter@store');

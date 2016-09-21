@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Site name | Quem Somos</title>
-
-        <!-- Bootstrap -->
-        <link href="site/assets/css/bootstrap.css" rel="stylesheet">
-
-        <!-- css customizado -->
-        <link href="site/assets/css/style.css" rel="stylesheet">
-        <link href="site/assets/css/collor.css" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link href="site/assets/fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        @include('site.include.head')
     </head>
     
     <body>
@@ -142,35 +121,57 @@
         <section class="bg-box-missoes">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-xs-12 col-sm-12 fix-box-missao-quem-somos">
-                        <div class="col-md-12 col-xs-12 col-sm-12 box-missao-quem-somos ">
+                    <div class="col-md-12 col-xs-12 col-sm-12 fix-box-missao-quem-somos">
+
+                        <div class="col-md-6 col-xs-6 col-sm-12  ">
                             <!-- <div class="img-box-missao-quem-somos"></div> -->
-                            <div class="ajuste-espacamento-box-contato ">
+                            <div class="ajuste-espacamento-box-contato box-missao-quem-somos ">
                                 <h3>Nossa Missão</h3>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, dolorum! Laboriosam ipsam, itaque perferendis nisi dicta,</p>
+                                <p class="">{{ $quemSomos->description }}</p>
                                 <p><a href="#">Leia Mais</a></p>
                             </div> <!-- /.ajuste-espacamento-box-contato -->
                         </div><!-- /.col-md-21.col-xs-12.col-sm-12.box-missao-quem-somos -->
-                        
-                        
-                        <div class="col-md-12 col-xs-12 col-sm-12 box-missao-quem-somos ">
+
+
+                        <div class="col-md-6 col-xs-6 col-sm-12  ">
                             <!-- <div class="img-box-missao-quem-somos"></div> -->
-                            <div class="ajuste-espacamento-box-contato ">
-                                <h3>Nossa Missão</h3>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, dolorum! Laboriosam ipsam, itaque perferendis nisi dicta,</p>
+                            <div class="ajuste-espacamento-box-contato box-missao-quem-somos ">
+                                <h3>Por que nos escolher</h3>
+                                <p class="">{{ $quemSomos->whyUs }}</p>
                                 <p><a href="#">Leia Mais</a></p>
                             </div> <!-- /.ajuste-espacamento-box-contato -->
                         </div><!-- /.col-md-21.col-xs-12.col-sm-12.box-missao-quem-somos -->
+
+                        <div class="col-md-6 col-xs-6 col-sm-12  ">
+                            <!-- <div class="img-box-missao-quem-somos"></div> -->
+                            <div class="ajuste-espacamento-box-contato box-missao-quem-somos ">
+                                <h3>Nossos Valores</h3>
+                                <p class="">{{ $quemSomos->ourValues }}</p>
+                                <p><a href="#">Leia Mais</a></p>
+                            </div> <!-- /.ajuste-espacamento-box-contato -->
+                        </div><!-- /.col-md-21.col-xs-12.col-sm-12.box-missao-quem-somos -->
+
+                        <div class="col-md-6 col-xs-6 col-sm-12  ">
+                            <!-- <div class="img-box-missao-quem-somos"></div> -->
+                            <div class="ajuste-espacamento-box-contato box-missao-quem-somos ">
+                                <h3>Nossa Visão</h3>
+                                <p class="">{{ $quemSomos->vision }}</p>
+                                <p><a href="#">Leia Mais</a></p>
+                            </div> <!-- /.ajuste-espacamento-box-contato -->
+                        </div><!-- /.col-md-21.col-xs-12.col-sm-12.box-missao-quem-somos -->
+
+                        
+
                         
                         
-                    </div><!-- /.col-md-21.col-xs-12.col-sm-12.fix-box-missao-quem-somos --> 
-                    
-                    <div class="col-md-6 col-xs-12 col-sm-12 fix-box-missao-quem-somos">
-                        <div class="box-video-quem-somos embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nIsbXJ81SK0" frameborder="0" allowfullscreen=""></iframe>
-                        </div>
-                    </div><!-- /.col-md-21.col-xs-12.col-sm-12 --> 
-                                                                                                    
+                    </div><!-- /.col-md-21.col-xs-12.col-sm-12.fix-box-missao-quem-somos -->
+
+                    {{--<div class="col-md-6 col-xs-12 col-sm-12 fix-box-missao-quem-somos">--}}
+                        {{--<div class="box-video-quem-somos embed-responsive embed-responsive-4by3">--}}
+                            {{--<iframe class="embed-responsive-item" src="{{ $quemSomos->linkVideo }}" frameborder="0" allowfullscreen=""></iframe>--}}
+                        {{--</div>--}}
+                    {{--</div><!-- /.col-md-21.col-xs-12.col-sm-12 -->--}}
+
                 </div><!-- /.row -->
             </div><!--/.container --> 
         </section>
@@ -187,12 +188,10 @@
                     </div><!-- /.col-md-21.col-xs-12.col-sm-12 -->
                     
                     <div class="col-md-8 col-xs-7 col-sm-12 fix-box-form-newsletter">
-                        <form>
+                        <form id="newsletter">
                             <div class="col-md-5 col-xs-12 col-sm-12" style="margin-bottom:20px;">
-                                <input type="text" class="form-control" id="" placeholder="Nome">
-                            </div><!-- /.form-group -->
-                            <div class="col-md-5 col-xs-12 col-sm-12" style="margin-bottom:20px;">
-                                <input type="email" class="form-control" id="" placeholder="Email">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <p id="newsletterSuccess"></p>
                             </div>
                             <div class="col-md-5 col-xs-12 col-sm-12" style="margin-bottom:20px;">
                                 <button type="submit" class="btn btn-danger">Inscrever</button>
@@ -347,72 +346,7 @@
             </div><!--/.container --> 
         </section>
         <!-- fim Section localização -->
-            
-        
-        
-        
-        
-        
-        <footer >
-            <section class="bg-footer size-footer">
-                <div class="container">
-                    <div class="row row-adjust-box-footer">
-                        <div class="col-md-4 col-xs-6 col-sm-12 ">
-                            <h4 class="text-color-white">Quem Somos</h4>
-                            <div class="linha-titulo-footer"></div> <!-- /.linha-titulo-footer --> 
-                            <p class="text-color-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aperiam praesentium, harum suscipit dicta consequatur, exercitationem cupiditate quia repellendus quaerat accusamus sequi cumque vitae voluptatum omnis. Tempora consequatur at incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dignissimos harum voluptatibus vitae sint, blanditiis quia in a soluta? Voluptatum rerum, magni? Repudiandae nihil maxime explicabo qui eligendi, incidunt impedit.</p>                                                                                 
-                        </div><!-- /.col-md-21.col-xs-12.col-sm-12 -->
 
-                        <div class="col-md-4 col-xs-6 col-sm-12 ">
-                            <h4 class="text-color-white">Contate-nos</h4>
-                            <div class="linha-titulo-footer"></div> <!-- /.linha-titulo-footer --> 
-                            <p class="text-color-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aperiam praesentium,</p>
-                            <br>
-                            <address class="text-color-3">
-                                <strong>Nome Empresa.</strong><br>
-                                Rua dos bobo - 00<br>
-                                sorocity, SP<br>
-                                <abbr title="Phone">P:</abbr> (15) 1234-5678
-                            </address>
-
-                            <address class="text-color-3">
-                                <strong>Contato</strong><br>
-                                <a href="mailto:a.a@a.com">a.a@a.com</a>
-                            </address>                                                                                 
-                        </div><!-- /.col-md-21.col-xs-12.col-sm-12 -->                    
-
-                        <div class="col-md-4 col-xs-6 col-sm-12 ">
-                            <h4 class="text-color-white">Facebook</h4>
-                            <div class="linha-titulo-footer"></div> <!-- /.linha-titulo-footer --> 
-
-                        </div><!-- /.col-md-21.col-xs-12.col-sm-12 -->
-
-                    </div><!-- /.row -->
-                </div><!--/.container -->
-            </section>   
-            
-            <section class="bg-footer-termos">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-xs-6 col-sm-12 ajuste-box-footer-termos text-left">
-                            <p class="text-color-3">Copyright © 2016 <a href="#">Robots</a>. All Rights Reserved.</p>                               
-                        </div><!-- /.col-md-6.col-xs-6.col-sm-12 -->
-                  
-
-                        <div class="col-md-6 col-xs-6 col-sm-12 tst">
-                            
-
-                        </div><!-- /.col-md-6.col-xs-6.col-sm-12 -->
-
-                    </div><!-- /.row -->
-                </div><!--/.container -->
-            </section>     
-        </footer>
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="site/assets/js/bootstrap.js"></script>
+    @include('site.include.footer')
     </body>
 </html>

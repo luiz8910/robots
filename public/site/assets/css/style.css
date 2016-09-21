@@ -23,7 +23,7 @@
 }
 
 section{
-    padding: 20px 0px 30px 0px !important;
+    padding: 0px 0px 80px 0px !important;
 }
 
 
@@ -174,8 +174,10 @@ section{
 }
 
 .bg-box-missoes{
-    min-height: 670px;
-    background-image: url(../upload/banner/bg-missoes.png);
+    /*min-height: 670px;*/
+    /*background-image: url(../upload/banner/bg-missoes.png);*/
+    background-color: #CCC;
+    padding: 0px 0px 30px 0px;
 }
 
 .box-video-quem-somos{

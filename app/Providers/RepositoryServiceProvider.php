@@ -50,6 +50,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind('admin\Repositories\ParceiroRepository',
             'admin\Repositories\ParceiroRepositoryEloquent'
         );
+
+        $this->app->bind('admin\Repositories\NewsletterRepository',
+            'admin\Repositories\NewsletterRepositoryEloquent'
+        );
     }
 }
 
