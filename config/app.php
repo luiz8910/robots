@@ -143,14 +143,14 @@ return [
 
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
-        admin\Providers\RepositoryServiceProvider::class,
+        Admin\Providers\RepositoryServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        admin\Providers\AppServiceProvider::class,
-        admin\Providers\EventServiceProvider::class,
-        admin\Providers\RouteServiceProvider::class,
+        Admin\Providers\AppServiceProvider::class,
+        Admin\Providers\EventServiceProvider::class,
+        Admin\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace admin\Http\Controllers;
+namespace Admin\Http\Controllers;
 
-use admin\Repositories\ParceiroRepository;
+use Admin\Repositories\ParceiroRepository;
 use Illuminate\Http\Request;
 
-use admin\Http\Requests;
+use Admin\Http\Requests;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use admin\Http\Requests\ClienteRequest;
+use Admin\Http\Requests\ClienteRequest;
 
 class ParceiroController extends Controller
 {

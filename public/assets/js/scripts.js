@@ -136,20 +136,28 @@ $(function () {
         return false;
    });
 
+
+
     function scroll()
     {
         $('html, body').animate({
             scrollTop: 100
         }, 1000);
     }
+
+
     
     $('#closeAlert').click(function () {
         $('#alert-danger').fadeOut(1000);
     });
 
+
+
     $('#closeAlertSuccess').click(function(){
         $('#alert-success').fadeOut(1000);
     });
+
+
 
     $('#newsletter').submit(function () {
        var email = $('#email').val();
@@ -167,7 +175,14 @@ $(function () {
             });
 
             request.done(function (e) {
-                $('#newsletterSuccess').html('Seu email foi inserido com sucesso');
+                console.log('done');
+                if(e.status)
+                {
+                    $('#newsletterSuccess').html('Seu email foi inserido com sucesso');
+                }else{
+                    $('#newsletterSuccess').html('Este Email já existe na nossa base de dados');
+                }
+
             });
 
             request.fail(function (e) {
@@ -178,4 +193,64 @@ $(function () {
         }
         return false;
     });
+
+
+
+    //var form;
+
+
+    //$('#imgEmployee').change(function (e) {
+    //    form = new FormData();
+    //
+    //    form.append('img', this.files[0], 'teste.jpg');
+    //});
+    //
+    //
+    //$('#formTeam').submit(function(e){
+    //    var file = $('#imgEmployee');
+    //
+    //    var request = $.ajax({
+    //        url: 'uploadTeamInfo/'+file, // Url do lado server que vai receber o arquivo
+    //        data: form,
+    //        processData: false,
+    //        contentType: false,
+    //        method: 'POST'
+    //    });
+    //
+    //    request.done(function (e) {
+    //       console.log('done');
+    //    });
+    //
+    //    request.fail(function(e){
+    //        console.log('fail');
+    //        console.log(e);
+    //    });
+    //
+    //    return false;
+    //
+    //    //alert('form');
+    //
+    //    //var img = $('#imgEmployee');
+    //
+    //    //var file = img.file;
+    //
+    //    //// Set up the request.
+    //    //var xhr = new XMLHttpRequest();
+    //    //
+    //    //// Open the connection.
+    //    //xhr.open('POST', 'uploadTeamInfo/'+file, true);
+    //    //
+    //    //// Set up a handler for when the request finishes.
+    //    //xhr.onload = function () {
+    //    //    if (xhr.status === 200) {
+    //    //        // File(s) uploaded.
+    //    //        alert('OK!');
+    //    //    } else {
+    //    //        alert('An error occurred!');
+    //    //    }
+    //    //};
+    //    //
+    //    //// Send the Data.
+    //    //xhr.send(formData);
+    //});
 });

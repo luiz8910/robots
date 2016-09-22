@@ -15,7 +15,12 @@ class CreateEquipesTable extends Migration
 	{
 		Schema::create('equipes', function(Blueprint $table) {
             $table->increments('id');
-
+			$table->string('img');
+			$table->string('nome');
+			$table->string('cargo');
+			$table->string('facebook');
+			$table->string('email');
+			$table->string('skype');
             $table->timestamps();
 		});
 	}

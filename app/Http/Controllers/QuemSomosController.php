@@ -1,14 +1,14 @@
 <?php
 
-namespace admin\Http\Controllers;
+namespace Admin\Http\Controllers;
 
-use admin\Repositories\QuemSomosRepository;
+use Admin\Repositories\QuemSomosRepository;
 use Illuminate\Http\Request;
 
-use admin\Http\Requests;
-use admin\Http\Controllers\Controller;
+use Admin\Http\Requests;
+use Admin\Http\Controllers\Controller;
 
-use admin\Http\Requests\QuemSomosRequest;
+use Admin\Http\Requests\QuemSomosRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;

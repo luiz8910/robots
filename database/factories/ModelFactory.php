@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(admin\Models\User::class, function ($faker) {
+$factory->define(Admin\Models\User::class, function ($faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,

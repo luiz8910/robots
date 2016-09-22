@@ -1,16 +1,16 @@
 <?php
 
-namespace admin\Repositories;
+namespace Admin\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use admin\Repositories\ServicoRepository;
-use admin\Models\Servico;
-use admin\Validators\ServicoValidator;
+use Admin\Repositories\ServicoRepository;
+use Admin\Models\Servico;
+use Admin\Validators\ServicoValidator;
 
 /**
  * Class ServicoRepositoryEloquent
- * @package namespace admin\Repositories;
+ * @package namespace Admin\Repositories;
  */
 class ServicoRepositoryEloquent extends BaseRepository implements ServicoRepository
 {

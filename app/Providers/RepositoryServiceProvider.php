@@ -1,6 +1,6 @@
 <?php
 
-namespace admin\Providers;
+namespace Admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,36 +23,36 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('admin\Repositories\UserRepository',
-            'admin\Repositories\UserRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\UserRepository',
+            'Admin\Repositories\UserRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\ServicoRepository',
-            'admin\Repositories\ServicoRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\ServicoRepository',
+            'Admin\Repositories\ServicoRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\ClienteRepository',
-            'admin\Repositories\ClienteRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\ClienteRepository',
+            'Admin\Repositories\ClienteRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\QuemSomosRepository',
-            'admin\Repositories\QuemSomosRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\QuemSomosRepository',
+            'Admin\Repositories\QuemSomosRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\InstitucionalRepository',
-            'admin\Repositories\InstitucionalRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\InstitucionalRepository',
+            'Admin\Repositories\InstitucionalRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\EquipeRepository',
-            'admin\Repositories\EquipeRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\EquipeRepository',
+            'Admin\Repositories\EquipeRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\ParceiroRepository',
-            'admin\Repositories\ParceiroRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\ParceiroRepository',
+            'Admin\Repositories\ParceiroRepositoryEloquent'
         );
 
-        $this->app->bind('admin\Repositories\NewsletterRepository',
-            'admin\Repositories\NewsletterRepositoryEloquent'
+        $this->app->bind('Admin\Repositories\NewsletterRepository',
+            'Admin\Repositories\NewsletterRepositoryEloquent'
         );
     }
 }

@@ -67,11 +67,15 @@ Route::post("alterar-institucional", ["as" => "admin.institucional.update", "use
 
 /* Fim Quem Somos */
 
-//-----------------------------------------  Equipe ------------------------------------------------------------
+//-----------------------------------------  Equipe --------------------------------------------------------------
 
 Route::get('equipe', ['as' => 'admin.equipe.index', 'uses' => 'EquipeController@index']);
 
 Route::get('add-equipe', ['as' => 'admin.equipe.create', 'uses' => 'EquipeController@create']);
+
+Route::post('equipe-salvar', ['as' => 'admin.equipe.store', 'uses' => 'EquipeController@store']);
+
+Route::post('uploadTeamInfo/{id}', ['as' => 'admin.equipe.update', 'uses' => 'EquipeController@update']);
 
 /* Fim Equipe */
 
@@ -105,4 +109,4 @@ Route::get('config-email', function(){
 
 Route::get('quemsomos', 'QuemSomosController@indexSite');
 
-Route::post('newsletter/{email}', 'ControllerNewsletter@store');
+Route::post('newsletter/{email}', 'NewsletterController@store');

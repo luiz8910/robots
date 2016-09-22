@@ -1,14 +1,14 @@
 <?php
 
-namespace admin\Http\Controllers;
+namespace Admin\Http\Controllers;
 
-use admin\Repositories\InstitucionalRepository;
+use Admin\Repositories\InstitucionalRepository;
 use Illuminate\Http\Request;
 
-use admin\Http\Requests;
-use admin\Http\Controllers\Controller;
+use Admin\Http\Requests;
+use Admin\Http\Controllers\Controller;
 
-use admin\Http\Requests\institucionalRequest;
+use Admin\Http\Requests\institucionalRequest;
 
 class institucionalController extends Controller
 {

@@ -1,14 +1,25 @@
 <?php
 
-namespace admin\Http\Controllers;
+namespace Admin\Http\Controllers;
 
+use Admin\Repositories\EquipeRepository;
 use Illuminate\Http\Request;
 
-use admin\Http\Requests;
-use admin\Http\Controllers\Controller;
+use Admin\Http\Requests;
+use Admin\Http\Controllers\Controller;
 
 class EquipeController extends Controller
 {
+    /**
+     * @var EquipeRepository
+     */
+    private $repository;
+
+    public function __construct(EquipeRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -29,15 +40,33 @@ class EquipeController extends Controller
         return view('admin.equipe.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\EquipeRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $this->repository->create($data);
+
+        return redirect()->route('admin.equipe.index')->withInput();
+
+//        $file = $request->file('img');
+//        //$nome = $this->repository->find($id)->nome;
+//        $ext = $file->getClientOriginalExtension();
+//
+//        //$fullName = $id.'-'.$nome.'.'.$ext;
+//
+//        DB::table('equipes')
+//            ->where('id', $id)
+//            ->update(['img' => $fullName]);
+//
+//
+//        $request->file('img')->move('uploads/equipe', $fullName);
     }
 
     /**
@@ -71,7 +100,18 @@ class EquipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $file = $request->file('img');
+        $nome = $this->repository->find($id)->nome;
+        $ext = $file->getClientOriginalExtension();
+
+        $fullName = $id.'-'.$nome.'.'.$ext;
+
+        DB::table('equipes')
+            ->where('id', $id)
+            ->update(['img' => $fullName]);
+
+
+        $request->file('img')->move('uploads/equipe', $fullName);
     }
 
     /**

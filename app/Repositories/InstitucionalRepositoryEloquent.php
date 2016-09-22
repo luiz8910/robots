@@ -1,16 +1,16 @@
 <?php
 
-namespace admin\Repositories;
+namespace Admin\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use admin\Repositories\institucionalRepository;
-use admin\Models\Institucional;
-use admin\Validators\InstitucionalValidator;
+use Admin\Repositories\institucionalRepository;
+use Admin\Models\Institucional;
+use Admin\Validators\InstitucionalValidator;
 
 /**
  * Class InstitucionalRepositoryEloquent
- * @package namespace admin\Repositories;
+ * @package namespace Admin\Repositories;
  */
 class InstitucionalRepositoryEloquent extends BaseRepository implements InstitucionalRepository
 {

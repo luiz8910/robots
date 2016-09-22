@@ -1,8 +1,8 @@
 <?php
 
-namespace admin\Http\Requests;
+namespace Admin\Http\Requests;
 
-use admin\Http\Requests\Request;
+use Admin\Http\Requests\Request;
 
 class ServicoRequest extends Request
 {
