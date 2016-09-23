@@ -27,7 +27,9 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        return view('admin.equipe.index');
+        $team = $this->repository->all();
+
+        return view('admin.equipe.index', compact('team'));
     }
 
     /**
@@ -51,7 +53,11 @@ class EquipeController extends Controller
     {
         $data = $request->all();
 
+        $data['img'] = $data['nome'];
+
         $this->repository->create($data);
+
+        $request->file('img')->move('uploads/equipe', $data['nome'].'.png');
 
         return redirect()->route('admin.equipe.index')->withInput();
 
@@ -100,18 +106,15 @@ class EquipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file = $request->file('img');
-        $nome = $this->repository->find($id)->nome;
-        $ext = $file->getClientOriginalExtension();
+        $data = $request->all();
 
-        $fullName = $id.'-'.$nome.'.'.$ext;
+        $data['img'] = $data['nome'];
 
-        DB::table('equipes')
-            ->where('id', $id)
-            ->update(['img' => $fullName]);
+        $this->repository->update($data, $id);
 
+        $request->file('img')->move('uploads/equipe', $data['nome'].'.png');
 
-        $request->file('img')->move('uploads/equipe', $fullName);
+        return redirect()->route('admin.equipe.index')->withInput();
     }
 
     /**

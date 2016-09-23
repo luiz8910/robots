@@ -228,113 +228,34 @@
                 <div class="divisor-default"></div> <!-- /.divisor-default-->
                 
                 <div class="row">
-                    <div class="col-md-3 col-xs-6 col-sm-12 ">
-                        <div class="thumbnail">
-                            <img src="site/assets/upload/usuario/user-team.png" alt="imagem responsive">
-                            <div class="caption">
-                                <h4 class="text-color-5">João Sopa</h4>
-                                <p><strong>Designer Ilustrator</strong></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minus, amet officia iure minima</p>
-                                
-                                <p class="text-color-black">
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
+                    @foreach($equipe as $e)
+                        <div class="col-md-3 col-xs-6 col-sm-12 ">
+                            <div class="thumbnail">
+                                <img src="uploads/equipe/{{ $e->nome }}.png" alt="imagem responsive" style="max-width:205px;max-height:246px;">
+                                <div class="caption">
+                                    <h4 class="text-color-5"></h4>
+                                    <p><strong>{{ $e->nome }}</strong></p>
+                                    <p>{{ $e->cargo }}</p>
 
-                                </p>
-                            </div> <!-- /.caption  --> 
-                        </div> <!-- /.thumbnail  -->
-                    </div> <!-- /.col-md-3.col-xs-4.col-sm-6  -->
-                    
-                   <div class="col-md-3 col-xs-6 col-sm-12">
-                        <div class="thumbnail">
-                            <img src="site/assets/upload/usuario/user-team.png" alt="imagem responsive">
-                            <div class="caption">
-                                <h4 class="text-color-5">João Sopa</h4>
-                                <p><strong>Designer Ilustrator</strong></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minus, amet officia iure minima</p>
-                                
-                                <p class="text-color-black">
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
+                                    <p class="text-color-black">
+                                        <a href="#" class="btn text-color-6" role="button">
+                                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" class="btn text-color-6" role="button">
+                                            <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" class="btn text-color-6" role="button">
+                                            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" class="btn text-color-6" role="button">
+                                            <i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                                        </a>
 
-                                </p>
-                            </div> <!-- /.caption  --> 
-                        </div> <!-- /.thumbnail  -->
-                    </div> <!-- /.col-md-3.col-xs-4.col-sm-6  -->
-                    
-                    <div class="col-md-3 col-xs-6 col-sm-12">
-                        <div class="thumbnail">
-                            <img src="site/assets/upload/usuario/user-team.png" alt="imagem responsive">
-                            <div class="caption">
-                                <h4 class="text-color-5">João Sopa</h4>
-                                <p><strong>Designer Ilustrator</strong></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minus, amet officia iure minima</p>
-                                
-                                <p class="text-color-black">
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
-
-                                </p>
-                            </div> <!-- /.caption  --> 
-                        </div> <!-- /.thumbnail  -->
-                    </div> <!-- /.col-md-3.col-xs-4.col-sm-6  -->
-                    
-                    <div class="col-md-3 col-xs-6 col-sm-12">
-                        <div class="thumbnail">
-                            <img src="site/assets/upload/usuario/user-team.png" alt="imagem responsive">
-                            <div class="caption">
-                                <h4 class="text-color-5">João Sopa</h4>
-                                <p><strong>Designer Ilustrator</strong></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minus, amet officia iure minima</p>
-                                
-                                <p class="text-color-black">
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                                    </a> 
-                                    <a href="#" class="btn text-color-6" role="button">
-                                        <i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
-                                    </a> 
-
-                                </p>
-                            </div> <!-- /.caption  --> 
-                        </div> <!-- /.thumbnail  -->
-                    </div> <!-- /.col-md-3.col-xs-4.col-sm-6  -->
+                                    </p>
+                                </div> <!-- /.caption  -->
+                            </div> <!-- /.thumbnail  -->
+                        </div> <!-- /.col-md-3.col-xs-4.col-sm-6  -->
+                   @endforeach
                     
                     
                 </div> <!-- /.row -->

@@ -56,7 +56,7 @@
                     <!-- FIM Alertas da pagina -->
 
                     <div class="row">
-                        {!! Form::open(['route' => 'admin.equipe.store']) !!}
+                        {!! Form::open(['route' => ['admin.equipe.store'], 'enctype' => 'multipart/form-data', 'method' => 'post']) !!}
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
                                     <label for="exampleInputFile">Imagem (Foto do funcionário)</label>

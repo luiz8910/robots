@@ -82,7 +82,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Link do Video</label>
-                                    <input class="form-control" id="linkVideo" value="{{ $quemSomos->linkVideo }}">
+                                    <input class="form-control" id="linkVideo" value="{{ $quemSomos->linkVideo}}">
                                     <p class="text-info">
                                         <i class="fa fa-question-circle " aria-hidden="true"></i>
                                         No campo acima insira o link do vídeo institucional

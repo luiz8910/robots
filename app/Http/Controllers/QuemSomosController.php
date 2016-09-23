@@ -2,6 +2,7 @@
 
 namespace Admin\Http\Controllers;
 
+use Admin\Repositories\EquipeRepository;
 use Admin\Repositories\QuemSomosRepository;
 use Illuminate\Http\Request;
 
@@ -19,10 +20,15 @@ class QuemSomosController extends Controller
      * @var quemSomosRepository
      */
     private $quemSomosRepository;
+    /**
+     * @var EquipeRepository
+     */
+    private $equipeRepository;
 
-    public function __construct(QuemSomosRepository $quemSomosRepository)
+    public function __construct(QuemSomosRepository $quemSomosRepository, EquipeRepository $equipeRepository)
     {
         $this->quemSomosRepository = $quemSomosRepository;
+        $this->equipeRepository = $equipeRepository;
     }
 
     /**
@@ -38,6 +44,7 @@ class QuemSomosController extends Controller
 
         //$quemSomos->linkVideo = str_replace(';', '?', $quemSomos->linkVideo);
 
+
         return view("admin.quem-somos.index", compact("quemSomos"));
     }
 
@@ -49,7 +56,9 @@ class QuemSomosController extends Controller
 
         $quemSomos->linkVideo = str_replace(';', '?', $quemSomos->linkVideo);
 
-        return view("site.quem-somos.index", compact("quemSomos"));
+        $equipe = $this->equipeRepository->all();
+
+        return view("site.quem-somos.index", compact("quemSomos", "equipe"));
     }
 
     /**
@@ -65,7 +74,7 @@ class QuemSomosController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(QuemSomosRequest $request)
@@ -78,7 +87,7 @@ class QuemSomosController extends Controller
 
         $this->quemSomosRepository->create($data);
 
-        Storage::disk("public_local")->put("quem-somos".$file, File::get($file));
+        Storage::disk("public_local")->put("quem-somos" . $file, File::get($file));
 
         return redirect()->route("admin.quem-somos.index");
     }
@@ -86,7 +95,7 @@ class QuemSomosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -97,7 +106,7 @@ class QuemSomosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -110,8 +119,8 @@ class QuemSomosController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update($form)
@@ -121,8 +130,8 @@ class QuemSomosController extends Controller
         $vetor = json_decode($form);
 
 
-         DB::table('quemsomos')
-             ->where('id', $id)
+        DB::table('quemsomos')
+            ->where('id', $id)
             ->update(
                 [
                     'description' => $vetor->index0,
@@ -139,16 +148,15 @@ class QuemSomosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $imagem = $this->quemSomosRepository->visible(["imagem"])->find($id);
 
-        if(file_exists(public_path()."/uploads/quem-somos" . $imagem->imagem))
-        {
-            unlink(public_path()."/uploads/quem-somos" . $imagem->imagem);
+        if (file_exists(public_path() . "/uploads/quem-somos" . $imagem->imagem)) {
+            unlink(public_path() . "/uploads/quem-somos" . $imagem->imagem);
             $this->quemSomosRepository->delete($id);
         }
 
