@@ -6,9 +6,13 @@ $(function () {
 
 
     $('#editQS').submit(function () {
+        var form = $(this).serialize();
+
         $('#error li').remove();
         $('#alert-danger').css('display', 'none');
         $('#alert-success').css('display', 'none');
+
+
 
         var description = $('#description').val();
         var whyUS = $('#whyUS').val();
@@ -17,6 +21,8 @@ $(function () {
         var linkVideo = $('#linkVideo').val();
         var scr = false; //usado para controlar o scroll
         var fail = false;
+
+
 
         if(!description)
         {
@@ -86,34 +92,10 @@ $(function () {
 
         if(!fail)
         {
-            id = 1;
-
-
-            linkVideo = linkVideo.replace(/\?/g, ';');
-            linkVideo = linkVideo.replace(/watch;v=/g, 'v/');
-            linkVideo = linkVideo.replace(/\//g, '-');
-
-            var form = [];
-
-            form[0] = description;
-            form[1] = whyUS;
-            form[2] = ourValues;
-            form[3] = vision;
-            form[4] = linkVideo;
-
-            var jObj = {};
-
-            for(i in form)
-            {
-                jObj['index'+i] =  form[i];
-            }
-
-            jObj = JSON.stringify(jObj);
-
             var request = $.ajax({
-                url: 'alterar-quem-somos/'+jObj,
+                url: 'alterar-quem-somos',
                 method: 'POST',
-                data: {jObj: jObj},
+                data: form,
                 dataType: 'json'
             });
 
@@ -128,7 +110,7 @@ $(function () {
                 console.log('fail');
                 console.log(e);
                 $('#alert-danger').css('display', 'block');
-                $('#error').append('<li>Os campos não aceitam ? (ponto de interrogação)</li>');
+                $('#error').append('<li>Verifique sua conexão com a internet e tente novamente</li>');
                 scroll();
             })
         }

@@ -52,7 +52,7 @@
                                     </button>
                                 </a>
                             </div> <!-- fim div .form-group -->
-                        </div> <!-- Div class .col-md-3 .col-sm-12 -->
+                        </div> <!-- div class .col-md-3 .col-sm-12 -->
                     </div><!-- fim div .row -->
 
                     <div class="row">

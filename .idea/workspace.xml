@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc3cbca-5739-4c64-a1bb-0242c951ae50" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/quem-somos/private/var/folders/wg/jhnl56w13bz554ddtt99wlwm0000gp/T/phpJDaFO6" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EquipeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EquipeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/scripts.js" afterPath="$PROJECT_DIR$/public/assets/js/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/equipe/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/equipe/create.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/equipe/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/equipe/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/site/quem-somos/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/site/quem-somos/index.blade.php" />
     </list>
     <ignored path="admin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,70 +46,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/equipe/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.097345136">
-              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4900568">
+              <caret line="112" column="94" selection-start-line="112" selection-start-column="94" selection-end-line="112" selection-end-column="94" />
               <folding>
-                <element signature="e#110#3434#0" expanded="false" />
-                <element signature="e#591#870#0" expanded="false" />
-                <element signature="e#899#1188#0" expanded="false" />
-                <element signature="e#1218#1492#0" expanded="false" />
-                <element signature="e#1526#1809#0" expanded="false" />
-                <element signature="e#1843#2125#0" expanded="false" />
-                <element signature="e#3466#3552#0" expanded="false" />
-                <element signature="e#3599#3648#0" expanded="false" />
-                <element signature="e#3698#3748#0" expanded="false" />
-                <element signature="e#3794#4745#0" expanded="false" />
+                <element signature="e#636#915#0" expanded="false" />
+                <element signature="e#944#1233#0" expanded="false" />
+                <element signature="e#1263#1537#0" expanded="false" />
+                <element signature="e#1571#1854#0" expanded="false" />
+                <element signature="e#1888#2170#0" expanded="false" />
+                <element signature="e#2950#3036#0" expanded="false" />
+                <element signature="e#3083#3132#0" expanded="false" />
+                <element signature="e#3182#3232#0" expanded="false" />
+                <element signature="e#3278#4229#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EquipeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.25">
-              <caret line="112" column="46" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
-              <folding>
-                <element signature="e#864#1023#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.equipes" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/27b1e9f0/27c307f7-c0e2-4e2c-84b3-90866011397c/admin.equipes">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/site/quem-somos/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="233" column="141" selection-start-line="233" selection-start-column="141" selection-end-line="233" selection-end-column="141" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -121,8 +69,8 @@
       <file leaf-file-name="QuemSomosController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="67" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
+            <state vertical-scroll-proportion="-20.0">
+              <caret line="141" column="58" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="58" />
               <folding>
                 <element signature="e#42#82#0#PHP" expanded="true" />
               </folding>
@@ -130,11 +78,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/equipe/create.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.208334">
+              <caret line="84" column="79" selection-start-line="84" selection-start-column="79" selection-end-line="84" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.75">
+              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.quemsomos" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/27b1e9f0/27c307f7-c0e2-4e2c-84b3-90866011397c/admin.quemsomos">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="128" selection-start-line="58" selection-start-column="128" selection-end-line="58" selection-end-column="128" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -196,15 +169,15 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewsletterController.php" />
         <option value="$PROJECT_DIR$/app/Models/Equipe.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_08_203011_create_equipes_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/validation.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/EquipeRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/equipe/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EquipeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php" />
         <option value="$PROJECT_DIR$/resources/views/site/quem-somos/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/equipe/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/scripts.js" />
       </list>
     </option>
@@ -247,6 +220,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -350,6 +325,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quem-somos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -495,14 +496,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="sc&#9;FILE&#9;file:///Users/luizfernandosanches/admin/public/assets/js/scripts.js&#10;EquipeC&#9;null&#9;null&#10;verify&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/Middleware/VerifyCsrfToken.php&#10;QuemS&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/Controllers/QuemSomosController.php&#10;rou&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/routes.php&#10;QuemSomosRe&#9;null&#9;null&#10;conta&#9;FILE&#9;file:///Users/luizfernandosanches/admin/resources/views/contato.blade.php&#10;contat&#9;FILE&#9;file:///Users/luizfernandosanches/admin/resources/views/contato.blade.php&#10;route&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/routes.php&#10;app.php&#9;FILE&#9;file:///Users/luizfernandosanches/admin/config/app.php&#10;components-edit&#9;FILE&#9;file:///Users/luizfernandosanches/admin/public/assets/pages/scripts/components-editors.min.js&#10;routes&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/routes.php" />
+    <property name="SearchEverywhereHistoryKey" value="route&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/routes.php&#10;sc&#9;FILE&#9;file:///Users/luizfernandosanches/admin/public/assets/js/scripts.js&#10;head&#9;FILE&#9;file:///Users/luizfernandosanches/admin/resources/views/site/include/head.blade.php&#10;EquipeC&#9;null&#9;null&#10;verify&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/Middleware/VerifyCsrfToken.php&#10;QuemS&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/Controllers/QuemSomosController.php&#10;rou&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/routes.php&#10;QuemSomosRe&#9;null&#9;null&#10;conta&#9;FILE&#9;file:///Users/luizfernandosanches/admin/resources/views/contato.blade.php&#10;contat&#9;FILE&#9;file:///Users/luizfernandosanches/admin/resources/views/contato.blade.php&#10;app.php&#9;FILE&#9;file:///Users/luizfernandosanches/admin/config/app.php&#10;components-edit&#9;FILE&#9;file:///Users/luizfernandosanches/admin/public/assets/pages/scripts/components-editors.min.js&#10;routes&#9;FILE&#9;file:///Users/luizfernandosanches/admin/app/Http/routes.php" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="FullScreen" value="true" />
   </component>
@@ -574,13 +573,13 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21567044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21890146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855093" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19466881" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3178082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3169399" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -671,13 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/site/include/head.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4632353">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -802,14 +794,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/27b1e9f0/27c307f7-c0e2-4e2c-84b3-90866011397c/admin.newsletters">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -863,25 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.125">
-          <caret line="75" column="97" selection-start-line="75" selection-start-column="97" selection-end-line="75" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/27b1e9f0/27c307f7-c0e2-4e2c-84b3-90866011397c/admin.quemsomos">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/EquipeRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.25">
@@ -894,13 +867,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52064896">
-          <caret line="51" column="99" selection-start-line="51" selection-start-column="99" selection-end-line="51" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/uploads/equipe/Deadpool.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -911,41 +877,15 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipe/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="128" selection-start-line="58" selection-start-column="128" selection-end-line="58" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/27b1e9f0/27c307f7-c0e2-4e2c-84b3-90866011397c/admin.equipes">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="67" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
-          <folding>
-            <element signature="e#42#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/site/quem-somos/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="233" column="141" selection-start-line="233" selection-start-column="141" selection-end-line="233" selection-end-column="141" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -954,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9247788">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,13 +901,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="278.75">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.25">
+        <state vertical-scroll-proportion="0.0">
           <caret line="112" column="46" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
           <folding>
             <element signature="e#864#1023#0#PHP" expanded="false" />
@@ -976,30 +914,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/scripts.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipe/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="54" column="70" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/site/include/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4632353">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipe/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11029412">
+          <caret line="58" column="128" selection-start-line="58" selection-start-column="128" selection-end-line="58" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/site/quem-somos/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022058824">
+          <caret line="233" column="141" selection-start-line="233" selection-start-column="141" selection-end-line="233" selection-end-column="141" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/27b1e9f0/27c307f7-c0e2-4e2c-84b3-90866011397c/admin.quemsomos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/quem-somos/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.208334">
+          <caret line="84" column="79" selection-start-line="84" selection-start-column="79" selection-end-line="84" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QuemSomosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0">
+          <caret line="141" column="58" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="58" />
           <folding>
-            <element signature="e#110#3434#0" expanded="false" />
-            <element signature="e#591#870#0" expanded="false" />
-            <element signature="e#899#1188#0" expanded="false" />
-            <element signature="e#1218#1492#0" expanded="false" />
-            <element signature="e#1526#1809#0" expanded="false" />
-            <element signature="e#1843#2125#0" expanded="false" />
-            <element signature="e#3466#3552#0" expanded="false" />
-            <element signature="e#3599#3648#0" expanded="false" />
-            <element signature="e#3698#3748#0" expanded="false" />
-            <element signature="e#3794#4745#0" expanded="false" />
+            <element signature="e#42#82#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/equipe/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097345136">
-          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.4900568">
+          <caret line="112" column="94" selection-start-line="112" selection-start-column="94" selection-end-line="112" selection-end-column="94" />
+          <folding>
+            <element signature="e#636#915#0" expanded="false" />
+            <element signature="e#944#1233#0" expanded="false" />
+            <element signature="e#1263#1537#0" expanded="false" />
+            <element signature="e#1571#1854#0" expanded="false" />
+            <element signature="e#1888#2170#0" expanded="false" />
+            <element signature="e#2950#3036#0" expanded="false" />
+            <element signature="e#3083#3132#0" expanded="false" />
+            <element signature="e#3182#3232#0" expanded="false" />
+            <element signature="e#3278#4229#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

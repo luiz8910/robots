@@ -42,7 +42,7 @@ class QuemSomosController extends Controller
 
         $quemSomos->linkVideo = str_replace('-', '/', $quemSomos->linkVideo);
 
-        //$quemSomos->linkVideo = str_replace(';', '?', $quemSomos->linkVideo);
+        $quemSomos->linkVideo = str_replace(';', '?', $quemSomos->linkVideo);
 
 
         return view("admin.quem-somos.index", compact("quemSomos"));
@@ -123,26 +123,29 @@ class QuemSomosController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update($form)
+    public function update()
     {
+
         $id = 1;
 
-        $vetor = json_decode($form);
+        if (isset($_POST))
+        {
 
+            DB::table('quemsomos')
+                ->where('id', $id)
+                ->update(
+                    [
+                        'description' => $_POST['description'],
+                        'whyUs' => $_POST['whyUs'],
+                        'ourValues' => $_POST['ourValues'],
+                        'vision' => $_POST['vision'],
+                        'linkVideo' => $_POST['linkVideo'],
+                    ]
+                );
 
-        DB::table('quemsomos')
-            ->where('id', $id)
-            ->update(
-                [
-                    'description' => $vetor->index0,
-                    'whyUs' => $vetor->index1,
-                    'ourValues' => $vetor->index2,
-                    'vision' => $vetor->index3,
-                    'linkVideo' => $vetor->index4,
-                ]
-            );
+            return 'true';
 
-        return 'true';
+        }
     }
 
     /**
