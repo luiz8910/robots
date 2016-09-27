@@ -54,6 +54,14 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind('Admin\Repositories\NewsletterRepository',
             'Admin\Repositories\NewsletterRepositoryEloquent'
         );
+
+        $this->app->bind('Admin\Repositories\ContatoRepository',
+            'Admin\Repositories\ContatoRepositoryEloquent'
+        );
+
+        $this->app->bind('Admin\Repositories\DetalhesContatoRepository',
+            'Admin\Repositories\DetalhesContatoRepositoryEloquent'
+        );
     }
 }
 

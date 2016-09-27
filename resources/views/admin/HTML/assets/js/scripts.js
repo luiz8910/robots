@@ -13,6 +13,7 @@ $(function () {
         $('#alert-success').css('display', 'none');
 
 
+
         var description = $('#description').val();
         var whyUS = $('#whyUS').val();
         var vision = $('#vision').val();
@@ -22,63 +23,75 @@ $(function () {
         var fail = false;
 
 
-        if (!description) {
+
+        if(!description)
+        {
             $('#alert-danger').css('display', 'block');
             $('#error').append('<li>O Campo descrição não foi preenchido</li>');
             fail = true;
 
-            if (!scr) {
+            if (!scr)
+            {
                 scr = true;
                 scroll();
             }
 
         }
 
-        if (!whyUS) {
+        if(!whyUS)
+        {
             $('#alert-danger').css('display', 'block');
             $('#error').append('<li>O Campo Por que nos escolher não foi preenchido</li>');
             fail = true;
 
-            if (!scr) {
+            if (!scr)
+            {
                 scr = true;
                 scroll();
             }
         }
 
-        if (!vision) {
+        if(!vision)
+        {
             $('#alert-danger').css('display', 'block');
             $('#error').append('<li>O Campo Visão não foi preenchido</li>');
             fail = true;
 
-            if (!scr) {
+            if (!scr)
+            {
                 scr = true;
                 scroll();
             }
         }
 
-        if (!ourValues) {
+        if (!ourValues)
+        {
             $('#alert-danger').css('display', 'block');
             $('#error').append('<li>O Campo Nossos valores não foi preenchido</li>');
             fail = true;
 
-            if (!scr) {
+            if (!scr)
+            {
                 scr = true;
                 scroll();
             }
         }
 
-        if (!linkVideo) {
+        if (!linkVideo)
+        {
             $('#alert-danger').css('display', 'block');
             $('#error').append('<li>O Campo link do video não foi preenchido</li>');
             fail = true;
 
-            if (!scr) {
+            if (!scr)
+            {
                 scr = true;
                 scroll();
             }
         }
 
-        if (!fail) {
+        if(!fail)
+        {
             var request = $.ajax({
                 url: 'alterar-quem-somos',
                 method: 'POST',
@@ -86,7 +99,7 @@ $(function () {
                 dataType: 'json'
             });
 
-            request.done(function (e) {
+            request.done(function(e){
                 console.log('done');
 
                 $('#alert-success').css('display', 'block');
@@ -103,35 +116,41 @@ $(function () {
         }
 
         return false;
-    });
+   });
 
 
-    function scroll() {
+
+    function scroll()
+    {
         $('html, body').animate({
             scrollTop: 100
         }, 1000);
     }
 
 
+    
     $('#closeAlert').click(function () {
         $('#alert-danger').fadeOut(1000);
     });
 
 
-    $('#closeAlertSuccess').click(function () {
+
+    $('#closeAlertSuccess').click(function(){
         $('#alert-success').fadeOut(1000);
     });
 
 
-    $('#newsletter').submit(function () {
-        var email = $('#email').val();
 
-        if (!email) {
+    $('#newsletter').submit(function () {
+       var email = $('#email').val();
+
+        if(!email)
+        {
             $('#newsletterSuccess').html('Insira um email válido');
         }
-        else {
+        else{
             var request = $.ajax({
-                url: 'newsletter/' + email,
+                url: 'newsletter/'+email,
                 method: 'POST',
                 data: email,
                 dataType: 'json'
@@ -139,9 +158,10 @@ $(function () {
 
             request.done(function (e) {
                 console.log('done');
-                if (e.status) {
+                if(e.status)
+                {
                     $('#newsletterSuccess').html('Seu email foi inserido com sucesso');
-                } else {
+                }else{
                     $('#newsletterSuccess').html('Este Email já existe na nossa base de dados');
                 }
 
@@ -157,27 +177,6 @@ $(function () {
     });
 
 
-    $('#formContato').submit(function (e) {
-        $('#error li').remove();
-        $('#alert-danger').css('display', 'none');
-        $('#alert-success').css('display', 'none');
-
-        var topic = $('#topic').val();
-        var description = $('#description').val();
-
-        if (!topic) {
-            e.preventDefault();
-            $('#alert-danger').css('display', 'block');
-            $('#error').append('<li>O Campo descrição do tópico não foi preenchido</li>');
-        }
-
-        if (!description) {
-            e.preventDefault();
-            $('#alert-danger').css('display', 'block');
-            $('#error').append('<li>O campo descrição não foi preenchido</li>');
-        }
-
-    });
 
 
     //var form;

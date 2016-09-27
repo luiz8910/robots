@@ -105,8 +105,19 @@ Route::get('config-email', function(){
     return view('admin.contato.config');
 });
 
+//------------------------------------------ Contato ----------------------------------------------------------------
+
+Route::get('listar-contatos', ['as' => 'admin.contato.index', 'uses' => 'ContatoController@index']);
+
+Route::post('alterar-detalhes/{id}', ['as' => 'admin.contato.update', 'uses' => 'ContatoController@updateDetalhes']);
+
+
 //------------------------------------------  Site -------------------------------------------------------------------
 
 Route::get('quemsomos', 'QuemSomosController@indexSite');
 
 Route::post('newsletter/{email}', 'NewsletterController@store');
+
+Route::get('contato', ['as' => 'site.contato.index', 'uses' => 'ContatoController@indexSite']);
+
+Route::post('gravar-contato', ['as' => 'site.contato.store', 'uses' => 'ContatoController@store']);

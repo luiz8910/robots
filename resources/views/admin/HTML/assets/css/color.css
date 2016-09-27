@@ -1,0 +1,34 @@
+/* 
+
+---------- Sumario --------- //
+-------- 1-  footer
+-------- 2-  Tipografia
+-------- 3-  menu
+--------- Fim Sumario ------ //
+*/
+
+
+
+/* ----------- 1. Footer --------------
+--------------------------------------*/
+.bg-footer{
+    background-color: #2d2d2d;
+}
+
+
+/* ----------- 2. Tipografia --------------
+--------------------------------------*/
+.text-color-white{
+    color: white;
+    font-size: 15px
+}
+
+.text-color-1{
+    color: #555;
+}
+
+/* ----------- 3. menu --------------
+--------------------------------------*/
+.ul-dropdown-color{
+    background-color: #1f1f1f;
+}

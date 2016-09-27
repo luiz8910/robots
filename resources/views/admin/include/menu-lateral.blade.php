@@ -252,7 +252,7 @@
                 </a>
                 <ul class="list-group collapse ul-dropdown-color" id="drop8" style="margin-bottom: 0px !important;">
                     <li>
-                        <a class="border-a-menu" href="descri-contato.html">
+                        <a class="border-a-menu" href="{{ route('admin.contato.index') }}">
                             <i class="fa fa-commenting" aria-hidden="true"></i>
                             <span class="margin-font">Descrição</span>
                         </a>
