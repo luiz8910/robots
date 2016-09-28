@@ -80,22 +80,22 @@
 
                     <div class="form-group form-group-lg col-md-6 col-sm-6 col-xs-12 ">
                         <label for="exampleInputEmail1">Nome</label>
-                        <input type="text" class="form-control" name="name" id="" placeholder="Nome Completo">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Nome Completo">
                     </div> <!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->
 
                     <div class="form-group form-group-lg col-md-6 col-sm-6 col-xs-12 ">
                         <label for="exampleInputEmail1">Fone</label>
-                        <input type="text" class="form-control" name="tel" id="" placeholder="Fone">
+                        <input type="text" class="form-control" name="tel" id="tel" placeholder="Fone">
                     </div><!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->
 
                     <div class="form-group form-group-lg col-md-12 col-sm-12 col-xs-12">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" name="email" id="" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                     </div><!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->
 
                     <div class="form-group form-group-lg col-md-12 col-sm-12 col-xs-12">
                         <label for="exampleInputEmail1">Mensagem</label>
-                        <textarea class="form-control" name="msg" placeholder="Digite aqui sua mensagem" rows="5"></textarea>
+                        <textarea class="form-control" name="msg" id="msg" placeholder="Digite aqui sua mensagem" rows="5"></textarea>
                     </div><!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->
                 </div><!-- /.col-md-21.col-xs-12.col-sm-12.text-center.ajuste-bloco-header-page-contato -->
 
@@ -108,6 +108,9 @@
     </div><!--/.container -->
 </section>
 <!-- fim Section formularios -->
+
+<!-- The actual snackbar -->
+<div id="snackbar"></div>
 
 <div class="divisor-default"></div> <!-- /.divisor-default-->
 
@@ -182,5 +185,6 @@
 <!-- fim Section carrosel -->
 
 @include('site.include.footer')
+
 </body>
 </html>

@@ -4,8 +4,9 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Site name | Quem Somos</title>
 
-<!-- Bootstrap -->
+<!-- Bootstrap e terceiros-->
 <link href="site/assets/css/bootstrap.css" rel="stylesheet">
+<link href="site/assets/css/snackbar.css" rel="stylesheet">
 
 <!-- css customizado -->
 <link href="site/assets/css/style.css" rel="stylesheet">

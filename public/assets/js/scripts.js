@@ -106,13 +106,6 @@ $(function () {
     });
 
 
-    function scroll() {
-        $('html, body').animate({
-            scrollTop: 100
-        }, 1000);
-    }
-
-
     $('#closeAlert').click(function () {
         $('#alert-danger').fadeOut(1000);
     });
@@ -178,6 +171,78 @@ $(function () {
         }
 
     });
+
+
+    $('#gravarContato').submit(function (e) {
+        var name = $('#name').val();
+        var tel = $('#tel').val();
+        var email = $('#email').val();
+        var msg = $('#msg').val();
+        var text = '';
+        var fail = false;
+
+        if(!name)
+        {
+            e.preventDefault();
+            text += 'O Campo nome deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!tel)
+        {
+            e.preventDefault();
+            text += 'O Campo telefone deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!email)
+        {
+            e.preventDefault();
+            text += 'O Campo email deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!msg)
+        {
+            e.preventDefault();
+            text += 'O Campo mensagem deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!fail)
+        {
+            text = 'Contato enviado com sucesso';
+            snackbar(text);
+        }
+
+        //return false;
+    });
+
+
+    function scroll() {
+        $('html, body').animate({
+            scrollTop: 100
+        }, 1000);
+    }
+
+
+    function snackbar(text)
+    {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        $('#snackbar').html(text);
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function() {
+            x.className = x.className.replace("show", "");
+        }, 3000);
+
+        return false;
+    }
 
 
     //var form;

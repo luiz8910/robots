@@ -258,6 +258,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="border-a-menu" href="{{ route('admin.contato.lista') }}">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span class="margin-font">Lista de Contatos</span>
+                        </a>
+                    </li>
+                    <li>
                         <a class="border-a-menu" href="{{ url('admin.contato.config') }}">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span class="margin-font">Configuração de Email</span>

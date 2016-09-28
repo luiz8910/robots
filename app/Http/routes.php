@@ -111,6 +111,8 @@ Route::get('listar-contatos', ['as' => 'admin.contato.index', 'uses' => 'Contato
 
 Route::post('alterar-detalhes/{id}', ['as' => 'admin.contato.update', 'uses' => 'ContatoController@updateDetalhes']);
 
+Route::get('listar-contatos-admin', ['as' => 'admin.contato.lista', 'uses' => 'ContatoController@lista']);
+
 
 //------------------------------------------  Site -------------------------------------------------------------------
 

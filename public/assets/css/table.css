@@ -1,0 +1,11 @@
+.border-table-compra{
+    border: 1px solid #ddd;
+}
+
+.ajust-table-produtos{
+    min-height: 80px;
+}
+
+.bg-table-produtos{
+    background-color: #fdfdfd;
+}
