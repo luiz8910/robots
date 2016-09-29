@@ -10,7 +10,8 @@
         "bestmomo/scafold": "dev-master",
         "illuminate/html": "^5.0",
         "nesbot/carbon": "^1.21",
-        "prettus/l5-repository": "^2.5"
+        "prettus/l5-repository": "^2.5",
+        "aws/aws-sdk-php": "^3.19"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

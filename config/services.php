@@ -24,13 +24,13 @@ return [
     ],
 
     'ses' => [
-        'key' => '',
-        'secret' => '',
-        'region' => 'us-east-1',
+        'key' => 'AKIAJLTKXTIMMXNYYPMQ',
+        'secret' => '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',
+        'region' => 'us-west-2',
     ],
 
     'stripe' => [
-        'model'  => Admin\User::class,
+        'model'  => Admin\Models\User::class,
         'key' => '',
         'secret' => '',
     ],

@@ -50,24 +50,11 @@ class ContatoController extends Controller
 
     public function lista()
     {
-        $lista = $this->repository->all();
-
-//        foreach($lista as $l)
-//        {
-//            $date = date('Y-m-d', strtotime('+1 month', $date));
-//            $l->created_at = date('d-m-Y', $date);
-//        }
+        $lista = $this->repository->
+            orderBy('created_at', 'desc')->
+            all();
 
         return view('admin.contato.lista', compact('lista'));
-    }
-
-    public function date($data)
-    {
-        $dt = new DateTime($data); // <== instance from another API
-
-        $carbon = Carbon::instance($dt);
-
-        return $carbon->toDateTimeString();                      // 2008-01-01 00:00:00
     }
 
 
@@ -91,7 +78,7 @@ class ContatoController extends Controller
     {
         $this->repository->create($request->all());
 
-        return redirect()->route('site.contato.index');
+        return redirect()->route('site.index');
     }
 
     /**

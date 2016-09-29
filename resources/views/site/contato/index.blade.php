@@ -89,6 +89,11 @@
                     </div><!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->
 
                     <div class="form-group form-group-lg col-md-12 col-sm-12 col-xs-12">
+                        <label for="exampleInputEmail1">Assunto</label>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto">
+                    </div><!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->
+
+                    <div class="form-group form-group-lg col-md-12 col-sm-12 col-xs-12">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                     </div><!-- /.form-group-lg.col-md-6.col-sm-6.col-xs-12 -->

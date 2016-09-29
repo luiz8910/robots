@@ -176,6 +176,7 @@ $(function () {
     $('#gravarContato').submit(function (e) {
         var name = $('#name').val();
         var tel = $('#tel').val();
+        var subject = $('#subject').val();
         var email = $('#email').val();
         var msg = $('#msg').val();
         var text = '';
@@ -192,6 +193,13 @@ $(function () {
         {
             e.preventDefault();
             text += 'O Campo telefone deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!subject)
+        {
+            e.preventDefault();
+            text += 'O Campo Assunto deve ser preenchido' + '<br>';
             fail = true;
         }
 

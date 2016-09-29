@@ -5,5 +5,17 @@
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
     </data-source>
+    <data-source name="MySQL - robots@localhost" uuid="555ca676-ee6b-4712-975f-8fab99a3958e">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>robots.*</schema-pattern>
+      <default-schemas>robots.*</default-schemas>
+    </data-source>
+    <data-source name="MySQL - robots@online" uuid="d07d1239-de91-422c-9138-2cb7f2291315">
+      <secret-storage>master_key</secret-storage>
+      <user-name>robotsco_root</user-name>
+      <schema-pattern>robotsco_admin.*</schema-pattern>
+      <default-schemas>robotsco_admin.*</default-schemas>
+    </data-source>
   </component>
 </project>

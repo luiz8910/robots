@@ -17,6 +17,7 @@ class CreateContatosTable extends Migration
             $table->increments('id');
 			$table->string('name');
 			$table->string('tel');
+			$table->string('subject');
 			$table->string('email');
 			$table->string('msg');
             $table->timestamps();

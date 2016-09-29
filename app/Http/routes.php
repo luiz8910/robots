@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', ["as" => "admin.dashboard.index", "uses" => "DashboardController@index"]);
+
+Route::get('/dashboard', ["as" => "admin.dashboard.index", "uses" => "DashboardController@index"]);
 
 //---------------------------------------- Serviços -----------------------------------------------------///
 
@@ -115,6 +116,7 @@ Route::get('listar-contatos-admin', ['as' => 'admin.contato.lista', 'uses' => 'C
 
 
 //------------------------------------------  Site -------------------------------------------------------------------
+Route::get('/', ['as' => 'site.index', 'uses' => 'IndexController@index']);
 
 Route::get('quemsomos', 'QuemSomosController@indexSite');
 

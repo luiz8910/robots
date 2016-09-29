@@ -47,27 +47,60 @@
                     </div>
 
 
+
+
                 <div class="border-table-compra ">
                     <div class="table-responsive ajust-table-produtos bg-table-produtos">
                         <table class="table table-bordered table-hover" id="table">
                             <thead>
-                            <tr class="active">
-                                <th>Nome</th>
-                                <th>Fone</th>
-                                <th>Email</th>
-                                <th>Mensagem</th>
-                                <th>Data</th>
-                            </tr>
+                                <tr class="active">
+                                    <th>Nome</th>
+                                    <th>Fone</th>
+                                    <th>Email</th>
+                                    <th>Assunto</th>
+                                    <th>Data</th>
+                                    <th>Ações</th>
+                                </tr>
                             </thead>
+
                             <tbody>
                                 @foreach($lista as $l)
+                                    <div class="modal fade" id="myModal{{ $l->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">Sua Mensagem</h4>
+                                                </div>
+                                                <div class="modal-body" id="modalText">
+                                                    {{ $l->msg }}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    {{--<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>--}}
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok!</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Modal -->
+
                                     <tr>
                                         <td>{{ $l->name }}</td>
                                         <td>{{ $l->tel }}</td>
                                         <td>{{ $l->email }}</td>
-                                        <td>{{ $l->msg }}</td>
+                                        <td>{{ $l->subject }}</td>
+                                        {{--<td hidden id="msg-{{ $l->id }}">{{ $l->msg }}</td>--}}
                                         <td>
-                                            {{ $l->created_at }}
+                                            <? $date = date_create($l->created_at);
+                                                echo date_format($date, "d/m/Y"); ?>
+                                        </td>
+                                        <td id="td-modal">
+                                            <a href="#" type="button" data-toggle="modal" data-target="#myModal{{ $l->id }}">
+                                                <i class="fa fa-comments" aria-hidden="true"
+                                               title="Clique para ver a Mensagem">
+                                                </i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -11,7 +11,7 @@ class Contato extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-        'topic','description', 'name', 'tel', 'email', 'msg',
+        'topic','description', 'name', 'tel', 'subject', 'email', 'msg',
         'address', 'city', 'zipCode', 'telOwner', 'celOwner', 'emailOwner'
     ];
 
