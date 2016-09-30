@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>ROBOTS INFORM&Aacute;TICA E TECNOLOGIA</title>
     <link rel="stylesheet" type="text/css" href="site/assets/css/geral.css"/>
+    <link rel="stylesheet" type="text/css" href="site/assets/css/snackbar.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]> -->
@@ -183,6 +184,9 @@
 </div> <!--FIM DA DIV SERVICOS-INDEX-->
 <br/><br/><br/>
 <span data-scroll-index='3'></span>
+
+
+
 <div class="clientes-index">
     <div class="clientes-index2">
         <h4>Conheça alguns de Nossos Clientes</h4>
@@ -211,6 +215,7 @@
     <div class="contato-index2">
         <h4>Entre em Contato Com a Gente</h4>
 
+        <div id="snackbar"></div>
         {!! Form::open(['route' => 'site.contato.store', 'method' => 'post', 'id' => 'gravarContato']) !!}
             <label>Nome:</label><br/>
             <input type="text" name="name" id="name" class="input-text"/><br/>
@@ -258,7 +263,7 @@
 
 <!-- SCROLL PAGE-->
 @include('admin.include.scripts')
-{{--<script src="site/assets/js/jquery-1.10.2.min.js" type='text/javascript'></script>--}}
+<script src="site/assets/js/jquery-1.10.2.min.js" type='text/javascript'></script>
 <script src="site/assets/js/scrollIt.min.js" type='text/javascript'></script>
 <script>$(function () {
         $.scrollIt();

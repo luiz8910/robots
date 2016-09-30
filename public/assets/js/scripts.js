@@ -222,6 +222,9 @@ $(function () {
             text = 'Contato enviado com sucesso';
             snackbar(text);
         }
+        else{
+            snackbar(text);
+        }
 
         //return false;
     });
