@@ -106,6 +106,11 @@ Route::get('config-email', function(){
     return view('admin.contato.config');
 });
 
+
+//------------------------------------------ Questionário -----------------------------------------------------------
+
+Route::get('listar-questionarios', ['as' => 'admin.questionario.index', 'uses' => 'QuestionarioController@index']);
+
 //------------------------------------------ Contato ----------------------------------------------------------------
 
 Route::get('listar-contatos', ['as' => 'admin.contato.index', 'uses' => 'ContatoController@index']);
@@ -125,3 +130,9 @@ Route::post('newsletter/{email}', 'NewsletterController@store');
 Route::get('contato', ['as' => 'site.contato.index', 'uses' => 'ContatoController@indexSite']);
 
 Route::post('gravar-contato', ['as' => 'site.contato.store', 'uses' => 'ContatoController@store']);
+
+Route::get('questionario', ['as' => 'site.questionario.create', 'uses' => 'QuestionarioController@create']);
+
+Route::get('sucesso', ['as' => 'site.questionario.confirmation', 'uses' => 'QuestionarioController@confirmation']);
+
+Route::post('salvar-questionario', ['as' => 'site.questionario.store', 'uses' => 'QuestionarioController@store']);

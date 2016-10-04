@@ -230,6 +230,76 @@ $(function () {
     });
 
 
+    $('#gravarQuestionario').submit(function (e) {
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var pergunta1 = $('#pergunta1').val();
+        var pergunta2 = $('#pergunta2').val();
+        var pergunta3 = $('#pergunta3').val();
+        var pergunta4 = $('#pergunta4').val();
+        var pergunta5 = $('#pergunta5').val();
+        var pergunta6 = $('#pergunta6').val();
+
+        var fail = false;
+        var text = '';
+
+        if(!name)
+        {
+            e.preventDefault();
+            text += 'O Campo nome deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!email)
+        {
+            e.preventDefault();
+            text += 'O Campo email deve ser preenchido' + '<br>';
+            fail = true;
+        }
+
+        if(!pergunta2)
+        {
+            e.preventDefault();
+            text += 'A pergunta \"Defina com as suas palavras o que é um software\" precisa ser respondida' + '<br>';
+            fail = true;
+        }
+
+        if(!pergunta3)
+        {
+            e.preventDefault();
+            text += 'A pergunta \"Defina com as suas palavras o que é um site\" precisa ser respondida' + '<br>';
+            fail = true;
+        }
+
+        if(!pergunta4)
+        {
+            e.preventDefault();
+            text += 'A pergunta \"Sabendo que a ROBOTS INFORMÁTICA E TECNOLOGIA desenvolve sistemas web e aplicativos para dispositivos móveis, qual seria sua primeira ação como vendedor?\" precisa ser respondida' + '<br>';
+            fail = true;
+        }
+
+        if(!pergunta5)
+        {
+            e.preventDefault();
+            text += 'A pergunta \"Descreva um estudo de caso simulado em que você conversou com um cliente em potencial, demonstre porque o seu possível cliente precisa de um site.\" precisa ser respondida' + '<br>';
+            fail = true;
+        }
+
+        if(!pergunta6)
+        {
+            e.preventDefault();
+            text += 'A pergunta \"Em uma ação de marketing você é responsável por promover um de nossos aplicativos pela cidade...\" precisa ser respondida' + '<br>';
+            fail = true;
+        }
+
+        if(fail)
+        {
+            snackbar(text);
+        }
+    });
+
+
     function scroll() {
         $('html, body').animate({
             scrollTop: 100

@@ -310,6 +310,12 @@
                 </a>
             </li>
             <li>
+                <a class="border-a-menu" href="{{ route('admin.questionario.index') }}">
+                    <i class="fa fa-pencil-square-o i-ajuste" aria-hidden="true"></i>
+                    <span class="margin-font">Questionários</span>
+                </a>
+            </li>
+            <li>
                 <a class="border-a-menu" href="dashboard.html">
                     <i class="fa fa-sign-out i-ajuste" aria-hidden="true"></i>
                     <span class="margin-font">Sair</span>

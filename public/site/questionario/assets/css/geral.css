@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0px;
+	padding:0px;
+	border:none;
+	list-style:none;
+	text-decoration:none;
+	font-family:"segoe ui", arial, sans-serif;
+}
+html{
+	background:#004b6f;
+}
+.geral{
+	width:980px;
+	min-height:1000px;
+	position:relative;
+	overflow:hidden;
+	margin:0px auto;
+	padding:0px 0px 50px 0px;
+/*	background:#007ab4;*/
+	background:#fff;
+	box-shadow:0px 0px 10px #013b56;
+}
+.geral h1{
+	margin-top:40px;
+	margin-bottom:40px;
+	text-align:center;
+	font-size:30px;
+	color:#007ab4;
+	letter-spacing:-1px;
+}
+.geral label{
+	display:block;
+	width:920px;
+	min-height:15px;
+	margin:0px auto;
+	font-size:20px;
+	color:#1c1c1c;
+	letter-spacing:-1px;
+}
+.geral label span{
+	font-size:16px;
+	font-weight:bold;
+	letter-spacing:-1px;
+}
+.geral .input-text{
+	width:920px;
+	height:25px;
+	padding:5px;
+	display:block;
+	margin:0px auto;
+	margin-top:10px;
+	font-size:18px;
+	color:#999;
+	background:#fcfcfc;
+	letter-spacing:-1px;
+	border:1px solid #ccc;
+}
+.geral .input-textarea{
+	width:920px;
+	max-width:920px;
+	height:100px;
+	padding:5px;
+	display:block;
+	margin:0px auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	background:#fcfcfc;
+	font-size:18px;
+	color:#999;
+	letter-spacing:-1px;
+	border:1px solid #ccc;
+}
+.geral .input-enviar{
+	width:400px;
+	height:50px;
+	padding:0px 5px 5px 5px;
+	display:block;
+	margin:0px auto;
+	background:#023a55;
+	color:#fff;
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+	cursor:pointer;
+	margin-top:30px;
+}
+.geral .input-enviar:hover{
+	background:#014c6f;
+}
+
+
+
+.geral2{
+	width:980px;
+	height:600px;
+	position:relative;
+	display:block;
+	margin:0px auto;
+	overflow:hidden;
+	margin-top:150px;
+	box-shadow:0px 0px 10px #333;
+	background:url(../img/gb-conf.png) top center no-repeat;
+}
+.geral2 h1{
+	color:#333;
+	text-align:center;
+	margin-top:100px;
+}
+.geral2 p{
+	color:666;
+	text-align:center;
+}
