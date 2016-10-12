@@ -27,7 +27,9 @@ class QuestionarioController extends Controller
      */
     public function index()
     {
-        $lista = $this->repository->all();
+        $lista = $this->repository->
+            orderBy('created_at', 'desc')->
+            all();
 
         return view('admin.questionario.index', compact('lista'));
     }

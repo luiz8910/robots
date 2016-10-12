@@ -80,6 +80,5 @@
     <!-- fim Page Content -->
 </div>  <!-- fim div #wrapper -->
 
-@include('admin.include.scripts')
 </body>
 </html>

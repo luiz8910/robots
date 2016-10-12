@@ -67,6 +67,5 @@
 </footer>
 <!-- fim footer -->
 
-@include('admin.include.scripts')
 </body>
 </html>

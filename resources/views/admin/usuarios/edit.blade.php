@@ -18,13 +18,13 @@
                 <div class="col-lg-12">
                     <h2><i class="fa fa-user" aria-hidden="true"></i> Perfil Usuário</h2>
                     <ol class="breadcrumb">
-                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></li>
                         <li class="active">Perfil Usuário</li>
                     </ol>
                     <div class="separador-1"></div> <!-- fim div .separador-1 -->
 
                     <!-- Alertas da pagina -->
-                    <div class="alert alert-success alert-dismissible" role="alert">
+                    <div class="alert alert-success alert-dismissible" role="alert" hidden>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -32,7 +32,7 @@
                         Suas alterações foram salvas!
                         <strong>:)</strong>
                     </div><!-- fim div .alert.alert-success.alert-dismissible -->
-                    <div class="alert alert-danger alert-dismissible" role="alert">
+                    <div class="alert alert-danger alert-dismissible" role="alert" hidden>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -45,23 +45,26 @@
 
                     <div class="col-md-3 col-sm-12 col-sm-12 ">
                         <div class="thumbnail">
-                            <img src="assets/upload/banner/banner-1.svg" alt="...">
-                            <h3>Steve Zoe</h3>
+                            <img src="uploads/users/{{ Auth::user()->id }}.png" alt="...">
+
+                            <h3>{{ Auth::user()->name }}</h3>
+
                             <div class="list-group" style="border-radius:none;">
+
                                 <a href="#visao" class="list-group-item a-style-menu-inline" aria-controls="visao" role="tab" data-toggle="tab" style="border-radius: 0px !important;">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     Visão geral
                                 </a>
+
                                 <a href="#conta" class="list-group-item a-style-menu-inline" aria-controls="messages" role="tab" data-toggle="tab">
                                     <i class="fa fa-key" aria-hidden="true"></i>
                                     Minha Conta
                                 </a>
-                                <a href="#perfil-blog" class="list-group-item a-style-menu-inline" aria-controls="messages" role="tab" data-toggle="tab" style="border-radius: 0px !important;">
-                                    <i class="fa fa-rss" aria-hidden="true"></i>
-                                    Perfil Blog
-                                </a>
+
                             </div> <!-- Fim div .list-group -->
+
                         </div> <!-- fim div .thumbnail -->
+
                     </div> <!-- Fim div .col-md-3 .col-sm-3 -->
 
                     <div class="col-md-9 col-sm-12 col-xs-12">
@@ -74,30 +77,21 @@
                                 <div class="panel-body">
                                     <table class="table table-hover">
                                         <tbody>
-                                        <tr>
-                                            <th class="col-md-2">User Name</th>
-                                            <td>SteveZ</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Nome</th>
-                                            <td>Steve</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Aniversario</th>
-                                            <td>Daniel</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Profissão</th>
-                                            <td>Designer</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Email</th>
-                                            <td><a href="mailto:a@a.com">a@a.com</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Quem sou eu</th>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In quo laboriosam, fugiat provident, alias quos adipisci nobis vitae saepe recusandae distinctio quae earum deserunt maxime voluptatibus quaerat iusto expedita totam.</td>
-                                        </tr>
+                                            <tr>
+                                                <th class="col-md-2">Nome</th>
+                                                <td>{{ Auth::user()->name }}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th class="col-md-2">Email</th>
+                                                <td><a href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <th class="col-md-2">Cargo</th>
+                                                <td>{{ Auth::user()->role }}</td>
+                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div> <!-- fim div .panel-body -->
@@ -115,7 +109,7 @@
                                         <div class="list-group" style="border-radius:none;">
                                             <a href="#info" class="list-group-item a-style-menu-inline" aria-controls="info" role="tab" data-toggle="tab" style="border-radius: 0px !important;">
                                                 <i class="fa fa-cog" aria-hidden="true"></i>
-                                                Informações
+                                                Info
                                             </a>
                                             <a href="#avatar" class="list-group-item a-style-menu-inline" aria-controls="avatar" role="tab" data-toggle="tab">
                                                 <i class="fa fa-user" aria-hidden="true"></i>
@@ -137,50 +131,78 @@
                                                 </h4>
                                                 <div class="separador-2"></div> <!-- fim div.separador-2 -->
 
-                                                <div class="form-group text-color-1">
-                                                    <label for="">User Name </label>
-                                                    <input type="text" class="form-control" id="" placeholder="User Name" value="SteveZ" >
-                                                </div> <!-- fim div .form-group -->
+                                                {!! Form::open(['route' => ['admin.usuarios.update', Auth::user()->id], 'method' => 'post']) !!}
 
                                                 <div class="form-group text-color-1">
                                                     <label for="">Nome </label>
-                                                    <input type="text" class="form-control" id="" placeholder="Nome" value="Steve Zoe" >
+
+                                                    <input type="text" class="form-control" id="name"
+                                                           name="name" placeholder="Nome" value="{{ Auth::user()->name }}" >
+
                                                 </div> <!-- fim div .form-group -->
 
                                                 <div class="form-group text-color-1">
-                                                    <label for="">Data do Nascimento </label>
-                                                    <input type="date" class="form-control" id="" placeholder="" value="" >
-                                                </div> <!-- fim div .form-group -->
+                                                    <label for="">Cargo </label>
 
-                                                <div class="form-group text-color-1">
-                                                    <label for="">Profissão </label>
-                                                    <input type="text" class="form-control" id="" placeholder="Profissão" value="Designer" >
+                                                    <input type="text" class="form-control" id="role"
+                                                           name="role" placeholder="Cargo" readonly value="{{ Auth::user()->role }}" >
+
                                                 </div> <!-- fim div .form-group -->
 
                                                 <div class="form-group text-color-1">
                                                     <label for="">Email </label>
-                                                    <input type="email" class="form-control" id="" placeholder="Email" value="A@a.com" >
+
+                                                    <input type="email" class="form-control" id="email"
+                                                          name="email" placeholder="Email" value="{{ Auth::user()->email }}" >
+
                                                 </div> <!-- fim div .form-group -->
+
                                                 <br>
+
                                                 <button type="submit" class="btn btn-success" id="subir">
+
                                                     <i class="fa fa-check-square-o"></i>
-                                                    Salvar
+
+                                                    Alterar
+
                                                 </button>
+
+                                                {!! Form::close() !!}
+
                                             </div> <!-- fim div .tab-pane.fade.in.active#info -->
 
                                             <!-- Fim tab #info -->
 
                                             <div role="tabpanel" class="tab-pane fade" id="avatar">
+                                                {!! Form::open(['route' => 'admin.usuarios.update-img', 'method' => 'post', 'enctype' => 'multipart/form-data']) !!}
                                                 <h4 class="text-center">
                                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                                     Trocar avatar
                                                 </h4>
                                                 <div class="separador-2"></div> <!-- fim div.separador-2 -->
                                                 <br>
+
+                                                <div class="form-group">
+
+                                                    <label for="exampleInputFile" style="margin-bottom: 10px;">Imagem (Foto do Usuário)</label>
+
+                                                    <input type="file" name="img" id="exampleInputFile" style="margin-bottom: 10px;">
+
+                                                    <p class="text-info">
+
+                                                    <i class="fa fa-question-circle " aria-hidden="true"></i>
+
+                                                    A foto para o Usuário deve conter o tamanho de 500px X 600px!
+                                                    </p>
+
+                                                </div>
+                                                <br>
+
                                                 <button type="submit" class="btn btn-success" id="subir">
                                                     <i class="fa fa-check-square-o"></i>
-                                                    Salvar
+                                                    Alterar
                                                 </button>
+                                                {!! Form::close() !!}
                                             </div> <!-- fim div .tab-pane.fade.in.active#avatar -->
 
                                             <!-- Fim tab #avatar -->
@@ -194,20 +216,23 @@
 
                                                 <div class="form-group text-color-1">
                                                     <label for="">Senha atual</label>
-                                                    <input type="Password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+                                                    <input type="Password" class="form-control"
+                                                           name="actual_password" id="exampleInputPassword1" placeholder="**********">
                                                 </div> <!-- fim div .form-group -->
                                                 <div class="form-group text-color-1">
                                                     <label for="">Nova Senha</label>
-                                                    <input type="Password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+                                                    <input type="Password" class="form-control"
+                                                           name="password" id="exampleInputPassword1" placeholder="**********">
                                                 </div> <!-- fim div .form-group -->
                                                 <div class="form-group text-color-1">
                                                     <label for="">Redigite a nova Senha</label>
-                                                    <input type="Password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+                                                    <input type="Password" class="form-control"
+                                                           name="password_confirmation" id="exampleInputPassword1" placeholder="**********">
                                                 </div> <!-- fim div .form-group -->
                                                 <br>
                                                 <button type="submit" class="btn btn-success" id="subir">
                                                     <i class="fa fa-check-square-o"></i>
-                                                    Salvar
+                                                    Alterar
                                                 </button>
                                             </div> <!-- fim div .tab-pane.fade.in.active#Senha -->
                                             <!-- Fim tab #Senha -->
@@ -306,6 +331,5 @@
 </footer>
 <!-- fim footer -->
 
-@include('admin.include.scripts')
 </body>
 </html>

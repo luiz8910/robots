@@ -1,0 +1,51 @@
+/* 
+
+---------- Sumario --------- //
+-------- 1-  Geral
+-------- 2-  Header
+-------- 3-  menu
+-------- 4-  Page-profile
+
+
+--------- Fim Sumario ------ //
+*/
+
+
+/* ----------- 1. Geral --------------
+--------------------------------------*/
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu-R.ttf');
+}
+
+html, body {
+    height: 100%; 
+}
+
+body {
+    padding: 50px 0 0 0;
+    font-family: "Ubuntu" !important;
+    background: #fff !important;
+}
+
+.tst{
+    border: 1px solid red;
+}
+
+.div-central{
+    height: 400px;
+ /* metade da largura */
+    margin-top: -200px; /* metade da altura */
+    position: absolute;
+    top: 50%;
+    
+    border: 1px solid #dedede;
+}
+
+.ajust-tela{
+    padding: 15px 30px 15px 30px;
+}
+
+.ajuste-text-header{
+    margin-bottom: 20px;
+}

@@ -66,6 +66,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind('Admin\Repositories\QuestionarioRepository',
             'Admin\Repositories\QuestionarioRepositoryEloquent'
         );
+
+        $this->app->bind('Admin\Repositories\CargoRepository',
+            'Admin\Repositories\CargoRepositoryEloquent'
+        );
     }
 }
 

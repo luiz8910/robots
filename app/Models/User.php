@@ -9,10 +9,11 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Model implements Transformable, AuthenticatableContract, CanResetPasswordContract
 {
-    use TransformableTrait, Authenticatable, CanResetPassword;
+    use TransformableTrait, Authenticatable, CanResetPassword, SoftDeletes;
 
     /**
      * The database table used by the model.
@@ -26,7 +27,7 @@ class User extends Model implements Transformable, AuthenticatableContract, CanR
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password', 'role', 'img'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -34,5 +35,9 @@ class User extends Model implements Transformable, AuthenticatableContract, CanR
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+
+    protected $dates = ['deleted_at'];
 
 }

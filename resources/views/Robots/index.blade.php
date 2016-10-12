@@ -262,9 +262,9 @@
 </div> <!--FIM DA DIV RODAPE-->
 
 <!-- SCROLL PAGE-->
-@include('admin.include.scripts')
 <script src="site/assets/js/jquery-1.10.2.min.js" type='text/javascript'></script>
 <script src="site/assets/js/scrollIt.min.js" type='text/javascript'></script>
+<script type="application/javascript" src="assets/js/scritps.js"></script>
 <script>$(function () {
         $.scrollIt();
     });</script>

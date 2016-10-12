@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use Admin\Http\Requests;
 use Admin\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class ContatoController extends Controller
 {
@@ -76,7 +77,21 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->repository->create($request->all());
+        $data = $request->all();
+
+        $this->repository->create($data);
+
+        Mail::send('emails.index', ['name' => $data['name'], 'email' => $data['email'],
+            'tel' => $data['tel'], 'msg' => $data['msg']],
+
+            function($msg) use ($data){
+
+                $msg->from('marvin@robots.com.br', 'Marvin Chamando');
+
+                $msg->subject($data['subject']);
+
+                $msg->to('contato@robots.com.br');
+        });
 
         return redirect()->route('site.index');
     }

@@ -26,13 +26,25 @@
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        Steve Zoe
+                        @if(Auth::user())
+                            {{ Auth::user()->name }}
+                        @endif
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('admin.usuarios.edit') }}"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+                        <li>
+                            <a href="{{ route('admin.usuarios.edit') }}">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                Perfil
+                            </a>
+                        </li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
+                        <li>
+                            <a href="{{ url('/auth/logout') }}">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                Sair
+                            </a>
+                        </li>
                     </ul> <!-- fim ul .dropdown-menu -->
                 </li> <!-- fim li .dropdown -->
             </ul> <!-- fim ul .nav .nav-bar .navbar-right -->
