@@ -11,6 +11,8 @@ use Admin\Http\Requests\UserRequest;
 
 use Admin\Http\Requests;
 use Admin\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {

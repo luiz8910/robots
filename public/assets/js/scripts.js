@@ -45,38 +45,38 @@ $(function () {
             }
         }
 
-        if (!vision) {
-            $('#alert-danger').css('display', 'block');
-            $('#error').append('<li>O Campo Visão não foi preenchido</li>');
-            fail = true;
+        //if (!vision) {
+        //    $('#alert-danger').css('display', 'block');
+        //    $('#error').append('<li>O Campo Visão não foi preenchido</li>');
+        //    fail = true;
+        //
+        //    if (!scr) {
+        //        scr = true;
+        //        scroll();
+        //    }
+        //}
 
-            if (!scr) {
-                scr = true;
-                scroll();
-            }
-        }
+        //if (!ourValues) {
+        //    $('#alert-danger').css('display', 'block');
+        //    $('#error').append('<li>O Campo Nossos valores não foi preenchido</li>');
+        //    fail = true;
+        //
+        //    if (!scr) {
+        //        scr = true;
+        //        scroll();
+        //    }
+        //}
 
-        if (!ourValues) {
-            $('#alert-danger').css('display', 'block');
-            $('#error').append('<li>O Campo Nossos valores não foi preenchido</li>');
-            fail = true;
-
-            if (!scr) {
-                scr = true;
-                scroll();
-            }
-        }
-
-        if (!linkVideo) {
-            $('#alert-danger').css('display', 'block');
-            $('#error').append('<li>O Campo link do video não foi preenchido</li>');
-            fail = true;
-
-            if (!scr) {
-                scr = true;
-                scroll();
-            }
-        }
+        //if (!linkVideo) {
+        //    $('#alert-danger').css('display', 'block');
+        //    $('#error').append('<li>O Campo link do video não foi preenchido</li>');
+        //    fail = true;
+        //
+        //    if (!scr) {
+        //        scr = true;
+        //        scroll();
+        //    }
+        //}
 
         if (!fail) {
             var request = $.ajax({
@@ -97,7 +97,7 @@ $(function () {
                 console.log('fail');
                 console.log(e);
                 $('#alert-danger').css('display', 'block');
-                $('#error').append('<li>Verifique sua conexão com a internet e tente novamente</li>');
+                $('#error').append('<li>Verifique sua conexão com a internet ou atualize a página para logar novamente</li>');
                 scroll();
             })
         }

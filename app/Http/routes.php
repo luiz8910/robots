@@ -25,10 +25,17 @@ Route::group(['middleware' => 'auth.checkrole:Editor'], function(){
     //------------------------------------------ Questionário -----------------------------------------------------------
 
     Route::get('listar-questionarios', ['as' => 'admin.questionario.index', 'uses' => 'QuestionarioController@index']);
+
+    Route::get("listar-quem-somos", ["as" => "admin.quem-somos.index", "uses" => "QuemSomosController@index"]);
+
+    Route::post("alterar-quem-somos", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
 });
 
-//---------------------------------------- Serviços -----------------------------------------------------///
+
 Route::group(['middleware' => 'auth.checkrole:Administrador'], function(){
+
+    //---------------------------------------- Serviços -----------------------------------------------------///
+
     Route::get("meus-servicos", ["as" => "admin.servicos.index", "uses" => "ServicoController@index"]);
 
     Route::get("add-servicos", ["as" => "admin.servicos.create", "uses" => "ServicoController@create"]);
@@ -61,15 +68,11 @@ Route::group(['middleware' => 'auth.checkrole:Administrador'], function(){
 
 //------------------------------------------- Quem Somos ----------------------------------------------------//
 
-    Route::get("listar-quem-somos", ["as" => "admin.quem-somos.index", "uses" => "QuemSomosController@index"]);
-
     Route::get("add-quem-somos", ["as" => "admin.quem-somos.create", "uses" => "QuemSomosController@create"]);
 
     Route::get("edit-quem-somos/{id}", ["as" => "admin.quem-somos.edit", "uses" => "QuemSomosController@edit"]);
 
     Route::post("gravar-quem-somos", ["as" => "admin.quem-somos.store", "uses" => "QuemSomosController@store"]);
-
-    Route::post("alterar-quem-somos", ["as" => "admin.quem-somos.update", "uses" => "QuemSomosController@update"]);
 
     Route::get("excluir-quem-somos/{id}", ["as" => "admin.quem-somos.destroy", "uses" => "QuemSomosController@destroy"]);
 

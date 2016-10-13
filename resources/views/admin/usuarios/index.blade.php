@@ -84,13 +84,6 @@
                                             </button>
                                         </p>
 
-                                        <p>
-                                            <button type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#myModal1">
-                                                <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                                                Alterar Imagem
-                                            </button>
-                                        </p>
-
                                     <!-- Modal -->
                                     <div class="modal fade" id="AdminModal{{ $u->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                         <div class="modal-dialog" role="document">
@@ -222,13 +215,6 @@
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#editModalDel{{ $e->id }}">
                                             <i class="fa fa-ban" aria-hidden="true"></i>
                                             Excluir
-                                        </button>
-                                    </p>
-
-                                    <p>
-                                        <button type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#myModal1">
-                                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                                            Alterar Imagem
                                         </button>
                                     </p>
 
@@ -364,13 +350,6 @@
                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#operModalDel{{ $o->id }}">
                                                 <i class="fa fa-ban" aria-hidden="true"></i>
                                                 Excluir
-                                            </button>
-                                        </p>
-
-                                        <p>
-                                            <button type="button" class="btn btn-info form-control" data-toggle="modal" data-target="#myModal1">
-                                                <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                                                Alterar Imagem
                                             </button>
                                         </p>
 

@@ -138,8 +138,8 @@ class QuemSomosController extends Controller
                         'description' => $_POST['description'],
                         'whyUs' => $_POST['whyUs'],
                         'ourValues' => $_POST['ourValues'],
-                        'vision' => $_POST['vision'],
-                        'linkVideo' => $_POST['linkVideo'],
+//                        'vision' => $_POST['vision'],
+//                        'linkVideo' => $_POST['linkVideo'],
                     ]
                 );
 

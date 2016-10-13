@@ -63,28 +63,11 @@
 </div> <!--FIM DA DIV APRESENTACAO--><br/><br/><br/><span data-scroll-index='1'></span>
 
 <div class="sobre-nos">
-    <h5>N&oacute;s Acreditamos na Import&acirc;ncia da TECNOLOGIA</h5>
-    <h4>Mauris lobortis, mauris nec volutpat iaculis, libero neque euismod nisl, vel feugiat lacus velit in diam.
-        <br/><br/>Mauris lobortis, mauris nec volutpat iaculis, libero neque euismod nisl, vel feugiat lacus velit in
-        diam. </h4>
-    <p>Maecenas hendrerit elit in vehicula ultrices. Sed in mi nec turpis facilisis varius. Praesent eu enim ac eros
-        cursus posuere. Donec pharetra risus at libero ullamcorper, eu suscipit ex efficitur. Curabitur leo massa,
-        suscipit sed varius at, euismod ac nunc. Maecenas ornare sem eget turpis elementum, eu hendrerit metus luctus.
-        Fusce non aliquam dui.
+    <h5><?php echo $quemSomos->description ?></h5>
 
-        Proin posuere, tellus vitae ultrices rhoncus, lectus ante fermentum nisl, eget accumsan massa enim eget risus.
-        Donec aliquet magna ut nulla eleifend ultricies. Nullam eleifend metus quis nisl molestie, eget malesuada leo
-        dictum. Cras tempor erat quis magna laoreet sagittis. Donec ut lacus nec libero dictum viverra id vel neque.
-        Etiam luctus urna ac felis malesuada efficitur. Cras auctor a lectus varius mattis. Aenean sed venenatis. </p>
-    <p>Maecenas hendrerit elit in vehicula ultrices. Sed in mi nec turpis facilisis varius. Praesent eu enim ac eros
-        cursus posuere. Donec pharetra risus at libero ullamcorper, eu suscipit ex efficitur. Curabitur leo massa,
-        suscipit sed varius at, euismod ac nunc. Maecenas ornare sem eget turpis elementum, eu hendrerit metus luctus.
-        Fusce non aliquam dui.
+    <h4><?php echo $quemSomos->whyUs ?></h4>
 
-        Proin posuere, tellus vitae ultrices rhoncus, lectus ante fermentum nisl, eget accumsan massa enim eget risus.
-        Donec aliquet magna ut nulla eleifend ultricies. Nullam eleifend metus quis nisl molestie, eget malesuada leo
-        dictum. Cras tempor erat quis magna laoreet sagittis. Donec ut lacus nec libero dictum viverra id vel neque.
-        Etiam luctus urna ac felis malesuada efficitur. Cras auctor a lectus varius mattis. Aenean sed venenatis. </p>
+    <p><?php echo $quemSomos->ourValues ?></p>
 </div> <!--FIM DA DIV SOBRE-NOS-->
 <span data-scroll-index='2'></span>
 <div class="servicos-index">

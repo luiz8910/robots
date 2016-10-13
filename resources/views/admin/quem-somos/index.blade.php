@@ -46,7 +46,7 @@
                         <form id="editQS" method="post">
                             <div class="col-md-8 col-sm-12">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Descrição da Empresa</label>
+                                    <label for="exampleInputEmail1">Tópico</label>
 
                                     <textarea class="form-control" name="description" rows="10"
                                               id="description">{{$quemSomos->description}}</textarea>
@@ -54,49 +54,49 @@
 
                                     <p class="text-info">
                                         <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                        No campo acima faça uma descrição detalhada de sua empresa!
+                                        No campo acima descreva o tópico do texto!
                                     </p>
                                 </div><!-- fim div .input-group -->
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Descrição do Box "Por que nos escolher"</label>
+                                    <label for="exampleInputEmail1">Descrição do Texto lateral</label>
                                     <textarea class="form-control" name="whyUs" rows="10"
                                               id="whyUS">{{$quemSomos->whyUs}}</textarea>
                                     <p class="text-info">
                                         <i class="fa fa-question-circle " aria-hidden="true"></i>
-                                        No campo acima faça uma descrição do por que o cliente deve nos escolher!
+                                        No campo acima faça uma descrição do texto lateral!
                                     </p>
                                 </div><!-- fim div .input-group -->
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Descrição do Box "Nossos Valores"</label>
+                                    <label for="exampleInputEmail1">Descrição do Texto Principal</label>
                                     <textarea class="form-control" name="ourValues" rows="10"
                                               id="ourValues">{{$quemSomos->ourValues}}</textarea>
                                     <p class="text-info">
                                         <i class="fa fa-question-circle " aria-hidden="true"></i>
-                                        No campo acima faça uma descrição dos Valores da empresa!
+                                        No campo acima faça uma descrição do texto principal!
                                     </p>
                                 </div><!-- fim div .input-group -->
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Descrição do Box "Visão"</label>
-                                    <textarea class="form-control" name="vision" rows="10"
-                                              id="vision">{{$quemSomos->vision}}</textarea>
-                                    <p class="text-info">
-                                        <i class="fa fa-question-circle " aria-hidden="true"></i>
-                                        No campo acima faça uma descrição da visão da empresa!
-                                    </p>
-                                </div><!-- fim div .input-group -->
+                                {{--<div class="form-group">--}}
+                                    {{--<label for="exampleInputEmail1">Descrição do Box "Visão"</label>--}}
+                                    {{--<textarea class="form-control" name="vision" rows="10"--}}
+                                              {{--id="vision">{{$quemSomos->vision}}</textarea>--}}
+                                    {{--<p class="text-info">--}}
+                                        {{--<i class="fa fa-question-circle " aria-hidden="true"></i>--}}
+                                        {{--No campo acima faça uma descrição da visão da empresa!--}}
+                                    {{--</p>--}}
+                                {{--</div><!-- fim div .input-group -->--}}
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Link do Video</label>
-                                    <input class="form-control" name="linkVideo" id="linkVideo"
-                                           value="{{ $quemSomos->linkVideo}}">
-                                    <p class="text-info">
-                                        <i class="fa fa-question-circle " aria-hidden="true"></i>
-                                        No campo acima insira o link do vídeo institucional
-                                    </p>
-                                </div><!-- fim div .input-group -->
+                                {{--<div class="form-group">--}}
+                                    {{--<label for="exampleInputEmail1">Link do Video</label>--}}
+                                    {{--<input class="form-control" name="linkVideo" id="linkVideo"--}}
+                                           {{--value="{{ $quemSomos->linkVideo}}">--}}
+                                    {{--<p class="text-info">--}}
+                                        {{--<i class="fa fa-question-circle " aria-hidden="true"></i>--}}
+                                        {{--No campo acima insira o link do vídeo institucional--}}
+                                    {{--</p>--}}
+                                {{--</div><!-- fim div .input-group -->--}}
 
                                 <button type="submit" class="btn btn-success">
                                     <i class="fa fa-check-square-o"></i>

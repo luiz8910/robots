@@ -2,6 +2,7 @@
 
 namespace Admin\Http\Controllers;
 
+use Admin\Repositories\QuemSomosRepository;
 use Illuminate\Http\Request;
 
 use Admin\Http\Requests;
@@ -10,13 +11,25 @@ use Admin\Http\Controllers\Controller;
 class IndexController extends Controller
 {
     /**
+     * @var QuemSomosRepository
+     */
+    private $quemSomosRepository;
+
+    public function __construct(QuemSomosRepository $quemSomosRepository)
+    {
+        $this->quemSomosRepository = $quemSomosRepository;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('robots.index');
+        $quemSomos = $this->quemSomosRepository->first();
+
+        return view('robots.index', compact('quemSomos'));
     }
 
     /**
